@@ -25,7 +25,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-import main.Object.HopDong;
+import main.Object.*;
 
 public class Form {
 
@@ -99,6 +99,8 @@ public class Form {
 	private JTable tbBDonViThuHuong;
 	//Endregion
 
+	public DBConnect db;
+	
 	public HopDong hopDong;
 	
 	
@@ -123,6 +125,7 @@ public class Form {
 	 */
 	public Form() {
 		initialize();
+		db = new DBConnect();
 	}
 
 	/**
@@ -986,13 +989,15 @@ public class Form {
 		btnTiepTheo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Services services = new Services();
-				services.setVisible(true);
-				// JDialog jDialog = new JDialog(services.getOwner());
-				// jDialog.setModal(true);
-				// jDialog.setVisible(true);
-				frame.setFocusable(false);
-				frame.setEnabled(false);
+				db.testConnection();
+				
+//				Services services = new Services();
+//				services.setVisible(true);
+//				// JDialog jDialog = new JDialog(services.getOwner());
+//				// jDialog.setModal(true);
+//				// jDialog.setVisible(true);
+//				frame.setFocusable(false);
+//				frame.setEnabled(false);
 			}
 		});
 

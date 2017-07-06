@@ -28,7 +28,6 @@ import javax.swing.table.DefaultTableModel;
 import main.Object.*;
 
 public class Form {
-
 	//Region desktop
 	private JFrame frame;
 	private JTextField tfSoHopdong;

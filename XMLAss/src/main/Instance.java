@@ -26,9 +26,15 @@ public class Instance {
     
     private static Instance i;
     public static String idContract = "0";
-    public static String MaDL= "";
+    public static String MaDL= "DL002";
     public static int agentID = 0;
     public static int xStatus = -2;
+    
+    public Instance(){
+        if(i == null){
+            i = this;
+        }
+    }
     
 //    public static void SetAgent(int newID){
 //                  agentID = newID;

@@ -39,6 +39,7 @@ public class Login extends javax.swing.JFrame {
         tfName = new javax.swing.JTextField();
         tfPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,12 +54,23 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/ViettelFC2.png"))); // NOI18N
+        jLabel3.setAlignmentX(0.5F);
+        jLabel3.setFocusable(false);
+        jLabel3.setIconTextGap(1);
+        jLabel3.setMinimumSize(new java.awt.Dimension(242, 131));
+        jLabel3.setPreferredSize(new java.awt.Dimension(242, 131));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -69,14 +81,16 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jButton1)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addGap(66, 66, 66)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -86,7 +100,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jButton1)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
@@ -102,13 +116,22 @@ public class Login extends javax.swing.JFrame {
         try {
             ResultSet rs = db.getResulSet("select * from Accounts where name = '"+name+"' and password = '"+password+"'");
             if(rs.next()){
-                MainAction client = new MainAction();
+//                MainAction client = new MainAction();
+//		client.setVisible(true);
+//                client.setFocusable(true);
+                Instance.agentID = rs.getInt(4);
+                ResultSet rsAgent = db.getResulSet("select * from Agents where id = '"+Instance.agentID+"'");
+                if(rsAgent.next())
+                    Instance.MaDL = rsAgent.getString(2);
+                
+                System.out.println(Instance.MaDL);
+                
+                Search client = new Search();
 		client.setVisible(true);
                 client.setFocusable(true);
                 setFocusable(false);
                 setEnabled(false);
                 setVisible(false);
-                Instance.agentID = rs.getInt(4);
             }
         } catch (Exception ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -154,6 +177,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField tfName;
     private javax.swing.JTextField tfPassword;
     // End of variables declaration//GEN-END:variables

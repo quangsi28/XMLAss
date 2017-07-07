@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -332,6 +334,7 @@ public class DataAccessObject implements Serializable {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
+            ResultSetMetaData rsmd = rs.getMetaData();
 		// root elements
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element root = doc.createElement("root");
@@ -341,24 +344,22 @@ public class DataAccessObject implements Serializable {
                 Element Contract = doc.createElement("Contract");
                 root.appendChild(Contract);
                 Element nextElement;
+               
                 for (String data : Instance.data) {
                     nextElement = doc.createElement(data);
-                    nextElement.appendChild(doc.createTextNode(rs.getString(data)));
+                    String s = rs.getString(data);
+                    if(s == null)
+                        s= "";
+                    nextElement.appendChild(doc.createTextNode(s));
                     Contract.appendChild(nextElement);
-                    System.out.println(rs.getString(data));
                 }
             }
-            
-            doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File("D:\\fileXMLNew.xml"));
-
-            // Output to console for testing
-            // StreamResult result = new StreamResult(System.out);
 
             transformer.transform(source, result);
 
@@ -370,8 +371,6 @@ public class DataAccessObject implements Serializable {
         } catch (TransformerException ex) {
             Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
         } 
-        
-        
     }
     
     private void SetChild(Document d, Element Contract, String name, ResultSet rs){
@@ -388,6 +387,9 @@ public class DataAccessObject implements Serializable {
     
     public static void main(String[] args) throws Exception {
         ResultSet rs = new DataAccessObject().getAllFromTable("ContractsLocal");
-        new DataAccessObject().CreateXMLData(rs);
+//        new DataAccessObject().CreateXMLData(rs);
+
+        new DataAccessObject().CreateXML(rs);
+        
     }
 }

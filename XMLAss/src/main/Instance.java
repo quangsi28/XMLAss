@@ -24,6 +24,14 @@ public class Instance {
                     "NhanBaoCuocKhac","NhanBanKe","NhanBanKeKhac","EmailNhanBaoCuoc","SDTNhanBaoCuoc","ThanhToan",
                     "ThanhToanKhac","SoTaiKhoanThanhToan","NganHang","ChiNhanh","xStatus"};
     
+    
+    public static String[] dataShow = {"So Hop Dong","Ma Khach Hang","Ma Dai Ly","Ngay DK Hop Dong","Dia Diem DK Hop Dong",
+                    "Ten Khach Hang","Nguoi Dai Dien","Chuc Vu","Ngay Sinh","Gioi Tinh","CMND","Noi Cap CMND","Ngay Cap CMND","So Ho Khau",
+                    "Noi Cap SHK","Ngay Cap SHK","So Giay Chung Nhan DKDN","Noi Cap DKDN","Ngay Cap DKDN","So Nha","Duong","To",
+                    "Phuong Xa","Quan Huyen","Tinh Tp","SDT Khach Hang","Email","MST Khach Hang","Dich Vu","Nhan Bao Cuoc",
+                    "NhanBaoCuocKhac","NhanBanKe","NhanBanKeKhac","EmailNhanBaoCuoc","SDTNhanBaoCuoc","ThanhToan",
+                    "Thanh Toan Khac","So Tai Khoan Thanh Toan","Ngan Hang","Chi Nhanh"};
+    
     private static Instance i;
     public static String idContract = "0";
     public static String MaDL= "DL002";

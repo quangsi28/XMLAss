@@ -334,8 +334,6 @@ public class DataAccessObject implements Serializable {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-            ResultSetMetaData rsmd = rs.getMetaData();
-		// root elements
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element root = doc.createElement("root");
             doc.appendChild(root);
@@ -359,7 +357,7 @@ public class DataAccessObject implements Serializable {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("D:\\fileXMLNew.xml"));
+            StreamResult result = new StreamResult(new File(".\\client\\fileXMLNew.xml"));
 
             transformer.transform(source, result);
 

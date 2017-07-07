@@ -11,8 +11,10 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultCellEditor;
 import javax.swing.JFrame;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -23,6 +25,10 @@ import javax.swing.table.TableColumn;
  */
 public class Search extends javax.swing.JFrame {
     DataAccessObject db;
+    int[] widthColumn={50,50,50,50,50,100,100,100,100,100,100,100,100,100,
+                           100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+                           100,75,75,75,75,100,100,100,50,50,50,50,50,50,
+                            };
     /**
      * Creates new form Search
      */
@@ -31,9 +37,18 @@ public class Search extends javax.swing.JFrame {
         db = new DataAccessObject();
 //        fillData();
         loadData();
+        tblData.setDragEnabled(false);
+        tblData.setRowSelectionAllowed(true);
+        
+        JTextField tf = new JTextField();
+        tf.setEditable(false);
+        DefaultCellEditor editor = new DefaultCellEditor( tf );
+        tblData.setDefaultEditor(Object.class, editor);
+        
+        
         cbbItem.removeAllItems();
         for(int i = 0; i < Instance.data.length-1; i++){
-            cbbItem.addItem(Instance.data[i]);
+            cbbItem.addItem(Instance.dataShow[i]);
         }
     }        
 
@@ -52,9 +67,10 @@ public class Search extends javax.swing.JFrame {
         btnSearch = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblData = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1100, 350));
 
         tfSearchText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +78,7 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setText("Search");
+        btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -78,41 +94,60 @@ public class Search extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1"
+
             }
-        ));
-        jScrollPane3.setViewportView(tblData);
+        )
+    );
+    tblData.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    tblData.setFocusable(false);
+    tblData.setRequestFocusEnabled(false);
+    jScrollPane3.setViewportView(tblData);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tfSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbbItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnSearch)
-                        .addContainerGap(330, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbbItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2))
-        );
+    jButton1.setText("Xóa");
 
-        pack();
+    jButton2.setText("Sửa");
+    jButton2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton2ActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane3)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(tfSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(cbbItem, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(btnSearch)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                    .addComponent(jButton2)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton1)))
+            .addContainerGap())
+    );
+    layout.setVerticalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(tfSearchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbbItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSearch)
+                .addComponent(jButton1)
+                .addComponent(jButton2))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+            .addContainerGap())
+    );
+
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfSearchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSearchTextActionPerformed
@@ -121,10 +156,11 @@ public class Search extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        int columnSearch = cbbItem.getSelectedIndex();
-        
-        
+        searchingWithCondition();
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,22 +171,7 @@ public class Search extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -161,33 +182,62 @@ public class Search extends javax.swing.JFrame {
         });
     }
     
-    public void loadData() {
-        int[] widthColumn={50,50,50,50,50,100,100,100,100,100,100,100,100,100,
-                           100,100,100,100,100,100,100,100,100,100,100,100,100,100,
-                           100,75,75,75,75,100,100,100,50,50,50,50,50,50,
-                            };
+    public void searchingWithCondition(){
+        int columnSearch = cbbItem.getSelectedIndex()+1;
+        String searchKey  = tfSearchText.getText();
         DefaultTableModel model = new DefaultTableModel();
         try {
             ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '"+Instance.MaDL+"'");
+
             ResultSetMetaData rsmd = rs.getMetaData();
             int colNumber = rsmd.getColumnCount();
-            String[] arr = new String[colNumber];
-            for (int i = 0; i < colNumber; i++) {
-                arr[i] = rsmd.getColumnName(i + 1);
-                   }
+            String[] arr = Instance.dataShow;
+            
+            model.setColumnIdentifiers(arr);
+            
+            while(rs.next()){
+                arr = new String[colNumber];
+                String bufferString = rs.getString(columnSearch+1);
+                if(bufferString.contains(searchKey)){
+                    for (int i = 0; i < colNumber; i++) {
+                        arr[i] = rs.getString(i + 2);
+                    }
+                    model.addRow(arr);
+                }
+            }
+            
+            tblData.setModel(model);
+            tblData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            setColumnWidth(widthColumn, colNumber);
+        } catch (SQLException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public void loadData() {
+        
+        DefaultTableModel model = new DefaultTableModel();
+        try {
+            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '"+Instance.MaDL+"'");
+            
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int colNumber = rsmd.getColumnCount() - 1;
+            String[] arr = Instance.dataShow;
+
             model.setColumnIdentifiers(arr);
 
             while (rs.next()) {
                 for (int i = 0; i < colNumber; i++) {
-                    arr[i] = rs.getString(i + 1);
+                    arr[i] = rs.getString(i + 2);
                 }
                 model.addRow(arr);
             }
             tblData.setModel(model);
             tblData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
             setColumnWidth(widthColumn, colNumber);
-          
-
         } catch (SQLException ex) {
             Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -203,10 +253,11 @@ public class Search extends javax.swing.JFrame {
         }
     }
     
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbbItem;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblData;
     private javax.swing.JTextField tfSearchText;

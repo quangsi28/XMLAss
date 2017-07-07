@@ -68,6 +68,11 @@ public class MainAction extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton3.setText("Đồng bộ cục nộ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("Đồng bộ tất cả");
@@ -113,6 +118,17 @@ public class MainAction extends javax.swing.JFrame {
         // TODO add your handling code here:
         CreateFormSearch();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            if(db==null)
+                db = new DataAccessObject();
+            
+            db.CreateLocalContracts();
+        } catch (Exception ex) {
+            Logger.getLogger(MainAction.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     private void CreateFormClient(){
         FromClient f = new FromClient();

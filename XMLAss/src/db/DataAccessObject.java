@@ -383,11 +383,20 @@ public class DataAccessObject implements Serializable {
         }
     }
     
+    public void CreateLocalContracts() throws Exception{
+        try {
+            ResultSet rs = new DataAccessObject().getAllFromTable("ContractsLocal");
+            
+            new DataAccessObject().CreateXML(rs);
+        } catch (SQLException ex) {
+            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static void main(String[] args) throws Exception {
-        ResultSet rs = new DataAccessObject().getAllFromTable("ContractsLocal");
-//        new DataAccessObject().CreateXMLData(rs);
-
-        new DataAccessObject().CreateXML(rs);
-        
+//        ResultSet rs = new DataAccessObject().getAllFromTable("ContractsLocal");
+////        new DataAccessObject().CreateXMLData(rs);
+//
+//        new DataAccessObject().CreateXML(rs);
     }
 }

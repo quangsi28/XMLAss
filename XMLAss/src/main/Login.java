@@ -37,9 +37,9 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tfName = new javax.swing.JTextField();
-        tfPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        tfPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,9 +77,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfName, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(tfPassword)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -116,17 +116,12 @@ public class Login extends javax.swing.JFrame {
         try {
             ResultSet rs = db.getResulSet("select * from Accounts where name = '"+name+"' and password = '"+password+"'");
             if(rs.next()){
-//                MainAction client = new MainAction();
-//		client.setVisible(true);
-//                client.setFocusable(true);
                 Instance.agentID = rs.getInt(4);
                 ResultSet rsAgent = db.getResulSet("select * from Agents where id = '"+Instance.agentID+"'");
                 if(rsAgent.next())
                     Instance.MaDL = rsAgent.getString(2);
                 
-                System.out.println(Instance.MaDL);
-                
-                Search client = new Search();
+                MainAction client = new MainAction();
 		client.setVisible(true);
                 client.setFocusable(true);
                 setFocusable(false);
@@ -179,6 +174,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField tfName;
-    private javax.swing.JTextField tfPassword;
+    private javax.swing.JPasswordField tfPassword;
     // End of variables declaration//GEN-END:variables
 }

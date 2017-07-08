@@ -17,49 +17,66 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import sun.net.www.content.audio.x_aiff;
+
 /**
  *
  * @author Windows
  */
 public class FromClient extends javax.swing.JFrame {
 //	public DBConnect db;
+
     public HopDong hopDong;
     public DataAccessObject db;
-    
-    int nhanBaoCuoc,banKe,thanhToan;
-    
+
+    int nhanBaoCuoc, banKe, thanhToan;
+
     /**
      * Creates new form FromClient
      */
     public FromClient() {
         db = new DataAccessObject();
+        initComponents();
+        dcrNgayKyHopDong.setDateFormatString("dd/MM/yyyy");
+        dcrANgaySinh.setDateFormatString("dd/MM/yyyy");
+        dcrANoiCapCMND.setDateFormatString("dd/MM/yyyy");
+        dcrASoHoKhau.setDateFormatString("dd/MM/yyyy");
+        dcrAGiayChungNhanDKDN.setDateFormatString("dd/MM/yyyy");
         try {
-            initComponents();
-            ResultSet rs ;
-            switch(Instance.xStatus){
+            hopDong = new HopDong();
+            System.out.println(Instance.idContract + " xStatus: " + Instance.xStatus);
+            ResultSet rs;
+            switch (Instance.xStatus) {
                 case -1:
                     btnMainAction.setText("Delete");
-                    rs = db.getResulSet("select * from ContractsLocal where id = "+Instance.idContract);
-                    if(rs.getRow()==0)
-                        rs = db.getResulSet("select * from Contracts where id = "+Instance.idContract);
+                    rs = db.getResulSet("select * from Contracts where id = " + Instance.idContract);
                     FillData(rs);
                     break;
                 case 1:
                     btnMainAction.setText("Save");
-                    rs = db.getResulSet("select * from ContractsLocal where id = "+Instance.idContract);
-                    if(rs.getRow()==0)
-                        rs = db.getResulSet("select * from Contracts where id = "+Instance.idContract);
+                    rs = db.getResulSet("select * from Contracts where id = " + Instance.idContract);
                     FillData(rs);
                     break;
                 case 0:
-                    btnMainAction.setText("Add");    
+                    btnMainAction.setText("Add");
+                    tfMaCH.setText(Instance.MaDL);
+                    ResultSet soTk = db.getResulSet("Select * from Agents where id = " + Instance.agentID);
+
+                    while (soTk.next()) {
+                        tfMaCH.setText(soTk.getString(2));
+                        tfTaiKhoanGianDich1.setText(soTk.getString(3));
+                        tfTaiKhoanGianDich2.setText(soTk.getString(4));
+                        tfTaiKhoanGianDich3.setText(soTk.getString(5));
+                        tfTaiKhoanGianDich4.setText(soTk.getString(6));
+                    }
                     break;
             }
         } catch (Exception ex) {
             Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -941,6 +958,8 @@ public class FromClient extends javax.swing.JFrame {
             }
         });
 
+        dcrNgayKyHopDong.setDateFormatString("dd/MM/yyyy\n");
+
         btnClos.setText("Close");
         btnClos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1044,42 +1063,105 @@ public class FromClient extends javax.swing.JFrame {
     }//GEN-LAST:event_tfNamNuActionPerformed
 
     private void btnMainActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainActionActionPerformed
-        try {
-            String action = "Insert";
-//                db = new DataAccessObject();
-//            ResultSet rs = db.getAllFromTable("ContractsLocal");
-//            ResultSet rs = db.getResulSet("select * from ContractsLocal where SoHopDong = "+hopDong.SoHopDong+"");
-//            if(rs.next())
-//                action = "Update";
-//            else
-//                action = "Insert";
-            LuuHopDong();
-            hopDong.xStatus =String.valueOf(Instance.xStatus);
-            String sql = action+" into ContractsLocal (SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
-                    + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
-                    + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
-                    + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
-                    + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
-                    + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh, xStatus)"
-                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-            db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
-                    hopDong.SoHopDong, hopDong.MaKhachHang, hopDong.MaDaiLy, hopDong.NgayDKHopDong, hopDong.DiaDiemDKHopDong,
-                    hopDong.TenKhachHang, hopDong.NguoiDaiDien, hopDong.ChucVu, hopDong.NgaySinh, hopDong.GioiTinh, hopDong.CMND, hopDong.NoiCapCMND, hopDong.NgayCapCMND, hopDong.SoHoKhau,
-                    hopDong.NoiCapSoHoKhau, hopDong.NgayCapSoHoKhau, hopDong.SoGiayChungNhanDKDN, hopDong.NoiCapDKDN, hopDong.NgayCapDKDN, hopDong.SoNha, hopDong.Duong, hopDong.xTo,
-                    hopDong.PhuongXa, hopDong.QuanHuyen, hopDong.TinhTp, hopDong.SDTKhachHang, hopDong.Email, hopDong.MaSoThueKhachHang, hopDong.DichVuID, hopDong.NhanBaoCuoc,
-                    hopDong.NhanBaoCuocKhac, hopDong.NhanBanKe, hopDong.NhanBanKeKhac, hopDong.EmailNhanBaoCuoc, hopDong.SDTNhanBaoCuoc, hopDong.ThanhToan,
-                    hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh, hopDong.xStatus
-            );
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally{
-            setFocusable(false);
-            setEnabled(false);
-            setVisible(false);
+        String message = "Tạo hợp đồng mới?";
+        if(Instance.xStatus == 1)
+            message = "Lưu lại sửa đổi?";
+        int clickSave = JOptionPane.showConfirmDialog(null, "Tạo hợp đồng mới?", null, JOptionPane.YES_NO_OPTION);
+        if (clickSave == JOptionPane.YES_OPTION) {
+            try {
+                LuuHopDong();
+
+                hopDong.xStatus = String.valueOf(Instance.xStatus);
+                System.out.println("Status " + Instance.xStatus);
+                String sql = "";
+                ResultSet rs;
+                if (hopDong.xStatus.compareTo("0") == 0) {
+                    System.out.println("Add new contract");
+                    sql = "Insert into Contracts ( SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
+                            + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
+                            + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
+                            + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
+                            + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
+                            + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh)"
+                            + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, 
+                            hopDong.SoHopDong, hopDong.MaKhachHang, hopDong.MaDaiLy, hopDong.NgayDKHopDong, hopDong.DiaDiemDKHopDong,
+                            hopDong.TenKhachHang, hopDong.NguoiDaiDien, hopDong.ChucVu, hopDong.NgaySinh, hopDong.GioiTinh, hopDong.CMND, hopDong.NoiCapCMND, hopDong.NgayCapCMND, hopDong.SoHoKhau,
+                            hopDong.NoiCapSoHoKhau, hopDong.NgayCapSoHoKhau, hopDong.SoGiayChungNhanDKDN, hopDong.NoiCapDKDN, hopDong.NgayCapDKDN, hopDong.SoNha, hopDong.Duong, hopDong.xTo,
+                            hopDong.PhuongXa, hopDong.QuanHuyen, hopDong.TinhTp, hopDong.SDTKhachHang, hopDong.Email, hopDong.MaSoThueKhachHang, hopDong.DichVuID, hopDong.NhanBaoCuoc,
+                            hopDong.NhanBaoCuocKhac, hopDong.NhanBanKe, hopDong.NhanBanKeKhac, hopDong.EmailNhanBaoCuoc, hopDong.SDTNhanBaoCuoc, hopDong.ThanhToan,
+                            hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh                 );
+                    
+                    rs = db.getResulSet("SELECT TOP 1 * FROM Contracts ORDER BY ID DESC");
+                    rs.next();
+                    hopDong.id = rs.getString(1);
+                    
+                } else if (hopDong.xStatus.compareTo("1") == 0) {
+                    System.out.println("Update contract");
+                    sql = "UPDATE Contracts SET SoHopDong= ? , MaKhachHang= ? , MaDaiLy= ? , NgayDKHopDong= ? , DiaDiemDKHopDong= ? ,"
+                            + " TenKhachHang= ? , NguoiDaiDien= ? , ChucVu= ? , NgaySinh= ? , GioiTinh= ? , CMND= ? , NoiCapCMND= ? , NgayCapCMND= ? , SoHoKhau= ? ,"
+                            + " NoiCapSoHoKhau= ? , NgayCapSoHoKhau= ? , SoGiayChungNhanDKDN= ? , NoiCapDKDN= ? , NgayCapDKDN= ? , SoNha= ? , Duong= ? , xTo= ? ,"
+                            + " PhuongXa= ? , QuanHuyen= ? , TinhTp= ? , SDTKhachHang= ? , Email= ? , MaSoThueKhachHang= ? , DichVuID= ? , NhanBaoCuoc= ? ,"
+                            + " NhanBaoCuocKhac= ? , NhanBanKe= ? , NhanBanKeKhac= ? , EmailNhanBaoCuoc= ? , SDTNhanBaoCuoc= ? , ThanhToan= ? , "
+                            + "ThanhToanKhac= ? , SoTaiKhoanThanhToan= ? , NganHang= ? , ChiNhanh = ? "
+                            + "WHERE id = ?;";
+                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
+                            hopDong.SoHopDong, hopDong.MaKhachHang, hopDong.MaDaiLy, hopDong.NgayDKHopDong, hopDong.DiaDiemDKHopDong,
+                            hopDong.TenKhachHang, hopDong.NguoiDaiDien, hopDong.ChucVu, hopDong.NgaySinh, hopDong.GioiTinh, hopDong.CMND, hopDong.NoiCapCMND, hopDong.NgayCapCMND, hopDong.SoHoKhau,
+                            hopDong.NoiCapSoHoKhau, hopDong.NgayCapSoHoKhau, hopDong.SoGiayChungNhanDKDN, hopDong.NoiCapDKDN, hopDong.NgayCapDKDN, hopDong.SoNha, hopDong.Duong, hopDong.xTo,
+                            hopDong.PhuongXa, hopDong.QuanHuyen, hopDong.TinhTp, hopDong.SDTKhachHang, hopDong.Email, hopDong.MaSoThueKhachHang, hopDong.DichVuID, hopDong.NhanBaoCuoc,
+                            hopDong.NhanBaoCuocKhac, hopDong.NhanBanKe, hopDong.NhanBanKeKhac, hopDong.EmailNhanBaoCuoc, hopDong.SDTNhanBaoCuoc, hopDong.ThanhToan,
+                            hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh, String.valueOf(hopDong.id)
+                    );
+                }
+                
+                rs = db.getResulSet("select * from ContractsLocal where id = '" + hopDong.id + "'");
+                if (!rs.next()) {
+                    sql = "Insert into ContractsLocal (id, SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
+                            + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
+                            + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
+                            + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
+                            + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
+                            + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh, xStatus)"
+                            + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, String.valueOf(hopDong.id),
+                            hopDong.SoHopDong, hopDong.MaKhachHang, hopDong.MaDaiLy, hopDong.NgayDKHopDong, hopDong.DiaDiemDKHopDong,
+                            hopDong.TenKhachHang, hopDong.NguoiDaiDien, hopDong.ChucVu, hopDong.NgaySinh, hopDong.GioiTinh, hopDong.CMND, hopDong.NoiCapCMND, hopDong.NgayCapCMND, hopDong.SoHoKhau,
+                            hopDong.NoiCapSoHoKhau, hopDong.NgayCapSoHoKhau, hopDong.SoGiayChungNhanDKDN, hopDong.NoiCapDKDN, hopDong.NgayCapDKDN, hopDong.SoNha, hopDong.Duong, hopDong.xTo,
+                            hopDong.PhuongXa, hopDong.QuanHuyen, hopDong.TinhTp, hopDong.SDTKhachHang, hopDong.Email, hopDong.MaSoThueKhachHang, hopDong.DichVuID, hopDong.NhanBaoCuoc,
+                            hopDong.NhanBaoCuocKhac, hopDong.NhanBanKe, hopDong.NhanBanKeKhac, hopDong.EmailNhanBaoCuoc, hopDong.SDTNhanBaoCuoc, hopDong.ThanhToan,
+                            hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh, hopDong.xStatus
+                    );
+                } else {
+                    System.out.println("Update local contract");
+                    sql = "UPDATE ContractsLocal SET SoHopDong= ? , MaKhachHang= ? , MaDaiLy= ? , NgayDKHopDong= ? , DiaDiemDKHopDong= ? ,"
+                            + " TenKhachHang= ? , NguoiDaiDien= ? , ChucVu= ? , NgaySinh= ? , GioiTinh= ? , CMND= ? , NoiCapCMND= ? , NgayCapCMND= ? , SoHoKhau= ? ,"
+                            + " NoiCapSoHoKhau= ? , NgayCapSoHoKhau= ? , SoGiayChungNhanDKDN= ? , NoiCapDKDN= ? , NgayCapDKDN= ? , SoNha= ? , Duong= ? , xTo= ? ,"
+                            + " PhuongXa= ? , QuanHuyen= ? , TinhTp= ? , SDTKhachHang= ? , Email= ? , MaSoThueKhachHang= ? , DichVuID= ? , NhanBaoCuoc= ? ,"
+                            + " NhanBaoCuocKhac= ? , NhanBanKe= ? , NhanBanKeKhac= ? , EmailNhanBaoCuoc= ? , SDTNhanBaoCuoc= ? , ThanhToan= ? , "
+                            + "ThanhToanKhac= ? , SoTaiKhoanThanhToan= ? , NganHang= ? , ChiNhanh = ? "
+                            + "WHERE id = ?";
+                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
+                            hopDong.SoHopDong, hopDong.MaKhachHang, hopDong.MaDaiLy, hopDong.NgayDKHopDong, hopDong.DiaDiemDKHopDong,
+                            hopDong.TenKhachHang, hopDong.NguoiDaiDien, hopDong.ChucVu, hopDong.NgaySinh, hopDong.GioiTinh, hopDong.CMND, hopDong.NoiCapCMND, hopDong.NgayCapCMND, hopDong.SoHoKhau,
+                            hopDong.NoiCapSoHoKhau, hopDong.NgayCapSoHoKhau, hopDong.SoGiayChungNhanDKDN, hopDong.NoiCapDKDN, hopDong.NgayCapDKDN, hopDong.SoNha, hopDong.Duong, hopDong.xTo,
+                            hopDong.PhuongXa, hopDong.QuanHuyen, hopDong.TinhTp, hopDong.SDTKhachHang, hopDong.Email, hopDong.MaSoThueKhachHang, hopDong.DichVuID, hopDong.NhanBaoCuoc,
+                            hopDong.NhanBaoCuocKhac, hopDong.NhanBanKe, hopDong.NhanBanKeKhac, hopDong.EmailNhanBaoCuoc, hopDong.SDTNhanBaoCuoc, hopDong.ThanhToan,
+                            hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh, String.valueOf(hopDong.id)
+                    );
+                }
+
+                
+
+            } catch (SQLException ex) {
+                Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                setFocusable(false);
+                setEnabled(false);
+                setVisible(false);
+            }
         }
     }//GEN-LAST:event_btnMainActionActionPerformed
 
@@ -1090,28 +1172,32 @@ public class FromClient extends javax.swing.JFrame {
     private void rbNhanBaoCuoc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNhanBaoCuoc1ActionPerformed
         // TODO add your handling code here:
         tfBaoCuocKhac.setEditable(true);
-        nhanBaoCuoc = 1;        tfBaoCuocKhac.setText("");
+        nhanBaoCuoc = 1;
+        tfBaoCuocKhac.setText("");
 
     }//GEN-LAST:event_rbNhanBaoCuoc1ActionPerformed
 
     private void rbNhanBaoCuoc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNhanBaoCuoc2ActionPerformed
         // TODO add your handling code here:
-         tfBaoCuocKhac.setEditable(true);
-       nhanBaoCuoc=2;        tfBaoCuocKhac.setText("");
+        tfBaoCuocKhac.setEditable(true);
+        nhanBaoCuoc = 2;
+        tfBaoCuocKhac.setText("");
 
     }//GEN-LAST:event_rbNhanBaoCuoc2ActionPerformed
 
     private void rbNhanBaoCuoc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNhanBaoCuoc3ActionPerformed
         // TODO add your handling code here:
         tfBaoCuocKhac.setEditable(true);
-        nhanBaoCuoc =3;        tfBaoCuocKhac.setText("");
+        nhanBaoCuoc = 3;
+        tfBaoCuocKhac.setText("");
 
     }//GEN-LAST:event_rbNhanBaoCuoc3ActionPerformed
 
     private void rbNhanBaoCuoc4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNhanBaoCuoc4ActionPerformed
         // TODO add your handling code here:
-          tfBaoCuocKhac.setEditable(true);
-      nhanBaoCuoc = 4;        tfBaoCuocKhac.setText("");
+        tfBaoCuocKhac.setEditable(true);
+        nhanBaoCuoc = 4;
+        tfBaoCuocKhac.setText("");
 
     }//GEN-LAST:event_rbNhanBaoCuoc4ActionPerformed
 
@@ -1130,37 +1216,40 @@ public class FromClient extends javax.swing.JFrame {
 
     private void NhanBanKe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhanBanKe1ActionPerformed
         // TODO add your handling code here:
-        banKe= 1;
+        banKe = 1;
         tfBanKeKhac.setEditable(false);
-                tfBanKeKhac.setText("");
+        tfBanKeKhac.setText("");
 
     }//GEN-LAST:event_NhanBanKe1ActionPerformed
 
     private void NhanBanKe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhanBanKe2ActionPerformed
         // TODO add your handling code here:
-        banKe= 2;
-                tfBanKeKhac.setEditable(false);
+        banKe = 2;
+        tfBanKeKhac.setEditable(false);
         tfBanKeKhac.setText("");
 
     }//GEN-LAST:event_NhanBanKe2ActionPerformed
 
     private void NhanBanKe3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhanBanKe3ActionPerformed
         // TODO add your handling code here:
-        banKe= 3;        tfBanKeKhac.setEditable(false);
+        banKe = 3;
+        tfBanKeKhac.setEditable(false);
         tfBanKeKhac.setText("");
 
     }//GEN-LAST:event_NhanBanKe3ActionPerformed
 
     private void NhanBanKe4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhanBanKe4ActionPerformed
         // TODO add your handling code here:
-        banKe= 4;         tfBanKeKhac.setEditable(false);
+        banKe = 4;
+        tfBanKeKhac.setEditable(false);
         tfBanKeKhac.setText("");
 
     }//GEN-LAST:event_NhanBanKe4ActionPerformed
 
     private void NhanBanKe5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhanBanKe5ActionPerformed
         // TODO add your handling code here:
-        banKe= 5;        tfBanKeKhac.setEditable(true);
+        banKe = 5;
+        tfBanKeKhac.setEditable(true);
     }//GEN-LAST:event_NhanBanKe5ActionPerformed
 
     private void rbThanhToan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbThanhToan1ActionPerformed
@@ -1186,9 +1275,9 @@ public class FromClient extends javax.swing.JFrame {
 
     private void rbThanhToan4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbThanhToan4ActionPerformed
         // TODO add your handling code here:
-         tfThanhToanKhac.setEditable(false);
+        tfThanhToanKhac.setEditable(false);
         tfThanhToanKhac.setText("");
-       thanhToan = 4;
+        thanhToan = 4;
     }//GEN-LAST:event_rbThanhToan4ActionPerformed
 
     private void btnClosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClosActionPerformed
@@ -1224,7 +1313,7 @@ public class FromClient extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FromClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-            
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1232,22 +1321,26 @@ public class FromClient extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void CreateDB(){
+
+    private void CreateDB() {
         db = new DataAccessObject();
     }
-    
-    private void FillData(ResultSet rs){
+
+    private void FillData(ResultSet rs) {
         try {
-            rs.next(); 
+            if (!rs.next()) {
+                return;
+            }
+            System.out.println(rs.getString(1));
+            hopDong.id = rs.getString(1);
             tfHopDongSo.setText(rs.getString(2));
             tfMaKhachHang.setText(rs.getString(3));
             tfMaCH.setText(rs.getString(4));
-            
+
             tfHopDongKiTai.setText(rs.getString(6));
             tfATenKhachHang.setText(rs.getString(7));
             tfANguoiDaiDien.setText(rs.getString(8));
-            tfAChucVu.setText(rs.getString(9)); 
+            tfAChucVu.setText(rs.getString(9));
 
             tfNamNu.setText(rs.getString(11));
             tfASoCMND.setText(rs.getString(12));
@@ -1256,7 +1349,7 @@ public class FromClient extends javax.swing.JFrame {
             tfANoiCapSoHoKhau.setText(rs.getString(16));
             tfASoGiayChungNhanDKDN.setText(rs.getString(18));
             tfANoiCapGiayChungNhanDKDN.setText(rs.getString(19));
-            
+
             DateFormat formatter = new SimpleDateFormat("mm/dd/yy");
             try {
                 dcrNgayKyHopDong.setDate((Date) formatter.parse(rs.getString(5)));
@@ -1265,9 +1358,9 @@ public class FromClient extends javax.swing.JFrame {
                 dcrASoHoKhau.setDate((Date) formatter.parse(rs.getString(17)));
                 dcrAGiayChungNhanDKDN.setDate((Date) formatter.parse(rs.getString(20)));
             } catch (ParseException e) {
-              e.printStackTrace();
-            } 
-            
+                e.printStackTrace();
+            }
+
             tfASoNha.setText(rs.getString(21));
             tfADuong.setText(rs.getString(22));
             tfATo.setText(rs.getString(23));
@@ -1278,12 +1371,12 @@ public class FromClient extends javax.swing.JFrame {
             tfAFax.setText(rs.getString(27));
             tfAEmail.setText(rs.getString(28));
             tfAMaSoThue.setText(rs.getString(29));
-            
+
             int nhanBaoCuoc = Integer.parseInt(rs.getString(31));
             int nhanBanKe = Integer.parseInt(rs.getString(33));
             int thanhToan = Integer.parseInt(rs.getString(37));
-            
-            switch(nhanBaoCuoc){
+
+            switch (nhanBaoCuoc) {
                 case 1:
                     rbNhanBaoCuoc1.doClick();
                     break;
@@ -1303,8 +1396,8 @@ public class FromClient extends javax.swing.JFrame {
                     rbNhanBaoCuoc6.doClick();
                     break;
             }
-            
-            switch(nhanBanKe){
+
+            switch (nhanBanKe) {
                 case 1:
                     NhanBanKe1.doClick();
                     break;
@@ -1321,8 +1414,8 @@ public class FromClient extends javax.swing.JFrame {
                     NhanBanKe5.doClick();
                     break;
             }
-            
-            switch(thanhToan){
+
+            switch (thanhToan) {
                 case 1:
                     rbThanhToan1.doClick();
                     break;
@@ -1342,101 +1435,111 @@ public class FromClient extends javax.swing.JFrame {
                     rbThanhToan6.doClick();
                     break;
             }
-            ResultSet soTk = db.getResulSet("Select * from Agents where id = "+ Instance.agentID);
+            ResultSet soTk = db.getResulSet("Select * from Agents where id = " + Instance.agentID);
 
-            while(soTk.next()){
+            while (soTk.next()) {
                 tfMaCH.setText(soTk.getString(2));
                 tfTaiKhoanGianDich1.setText(soTk.getString(3));
                 tfTaiKhoanGianDich2.setText(soTk.getString(4));
                 tfTaiKhoanGianDich3.setText(soTk.getString(5));
                 tfTaiKhoanGianDich4.setText(soTk.getString(6));
             }
-            
+
             tfEmailNhanBaoCuoc.setText(rs.getString(35));
             tfSDTNhanBaoCuoc.setText(rs.getString(36));
             tfSoTaiKhoan.setText(rs.getString(39));
             tfNganHang.setText(rs.getString(40));
             tfChiNhanh.setText(rs.getString(41));
-            
+
             int service = rs.getInt("DichVuID");
-            
-            rs = db.getResulSet("select * from Services where id = "+ service);
-            
-            while(rs.next()){
-                String loadDichVu,diaChiLapDat,sdtLapDat,GoiCuoc,phiHoaMang,ghiChu;
+
+            rs = db.getResulSet("select * from Services where id = " + service);
+
+            while (rs.next()) {
+                String loadDichVu, diaChiLapDat, sdtLapDat, GoiCuoc, phiHoaMang, ghiChu;
                 loadDichVu = rs.getString(2);
                 diaChiLapDat = rs.getString(3);
                 sdtLapDat = rs.getString(4);
                 GoiCuoc = rs.getString(5);
                 phiHoaMang = rs.getString(6);
                 ghiChu = rs.getString(7);
-                tblDichVu.setValueAt(loadDichVu, 0,1);
-                tblDichVu.setValueAt(diaChiLapDat, 0,2);
-                tblDichVu.setValueAt(sdtLapDat, 0,3);
-                tblDichVu.setValueAt(GoiCuoc, 0,4);
-                tblDichVu.setValueAt(phiHoaMang, 0,5);
-                tblDichVu.setValueAt(ghiChu,0,6);
+                tblDichVu.setValueAt(loadDichVu, 0, 1);
+                tblDichVu.setValueAt(diaChiLapDat, 0, 2);
+                tblDichVu.setValueAt(sdtLapDat, 0, 3);
+                tblDichVu.setValueAt(GoiCuoc, 0, 4);
+                tblDichVu.setValueAt(phiHoaMang, 0, 5);
+                tblDichVu.setValueAt(ghiChu, 0, 6);
             }
-        } 
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void LuuHopDong(){
-        hopDong =new HopDong();
-        hopDong.SoHopDong= tfHopDongSo.getText();
-        hopDong.MaKhachHang=    tfMaKhachHang.getText();
-        hopDong.MaDaiLy =   tfMaCH.getText();
-        hopDong.NgayDKHopDong=   dcrNgayKyHopDong.getDate().toString();
-        hopDong.DiaDiemDKHopDong =     tfHopDongKiTai.getText();
-        hopDong.TenKhachHang =     tfATenKhachHang.getText();
-        hopDong.NguoiDaiDien=    tfANguoiDaiDien.getText();
-        hopDong.ChucVu =    tfAChucVu.getText();
-        hopDong.NgaySinh = dcrANgaySinh.getDate().toString();
-        hopDong.GioiTinh =     tfNamNu.getText();
-        hopDong.CMND =    tfASoCMND.getText();
-        hopDong.NoiCapCMND =   tfANoiCapCMND.getText();
-        hopDong.NgayCapCMND =   dcrANoiCapCMND.getDate().toString();
-        hopDong.SoHoKhau =    tfASoHoKhau.getText();
-        hopDong.NoiCapSoHoKhau =   tfANoiCapSoHoKhau.getText();
-        hopDong.NgayCapSoHoKhau=   dcrASoHoKhau.getDate().toString();
-        hopDong.SoGiayChungNhanDKDN=     tfASoGiayChungNhanDKDN.getText();
-        hopDong.NoiCapDKDN =   tfANoiCapGiayChungNhanDKDN.getText();
-        hopDong.NgayCapDKDN=   dcrAGiayChungNhanDKDN.getDate().toString();
-        hopDong.SoNha =   tfASoNha.getText();
-        hopDong.Duong =     tfADuong.getText();
-        hopDong.xTo =    tfATo.getText();
-        hopDong.PhuongXa =    tfAPhuong.getText();
-        hopDong.QuanHuyen=   tfAQuang.getText();
-        hopDong.TinhTp =    tfATinh.getText();
-        hopDong.SDTKhachHang =    tfADienThoai.getText();
-        hopDong.Email =     tfAEmail.getText();
-        hopDong.MaSoThueKhachHang =    tfAMaSoThue.getText();
+
+    public void LuuHopDong() {
+        hopDong.SoHopDong = tfHopDongSo.getText();
+        hopDong.MaKhachHang = tfMaKhachHang.getText();
+        hopDong.MaDaiLy = tfMaCH.getText();
+        hopDong.NgayDKHopDong = parseDate(dcrNgayKyHopDong.getDate());
+        hopDong.DiaDiemDKHopDong = tfHopDongKiTai.getText();
+        hopDong.TenKhachHang = tfATenKhachHang.getText();
+        hopDong.NguoiDaiDien = tfANguoiDaiDien.getText();
+        hopDong.ChucVu = tfAChucVu.getText();
+        hopDong.NgaySinh = parseDate(dcrANgaySinh.getDate());
+        hopDong.GioiTinh = tfNamNu.getText();
+        hopDong.CMND = tfASoCMND.getText();
+        hopDong.NoiCapCMND = tfANoiCapCMND.getText();
+        hopDong.NgayCapCMND = parseDate(dcrANoiCapCMND.getDate());
+        hopDong.SoHoKhau = tfASoHoKhau.getText();
+        hopDong.NoiCapSoHoKhau = tfANoiCapSoHoKhau.getText();
+        hopDong.NgayCapSoHoKhau = parseDate(dcrASoHoKhau.getDate());
+        hopDong.SoGiayChungNhanDKDN = tfASoGiayChungNhanDKDN.getText();
+        hopDong.NoiCapDKDN = tfANoiCapGiayChungNhanDKDN.getText();
+        hopDong.NgayCapDKDN = parseDate(dcrAGiayChungNhanDKDN.getDate());
+        hopDong.SoNha = tfASoNha.getText();
+        hopDong.Duong = tfADuong.getText();
+        hopDong.xTo = tfATo.getText();
+        hopDong.PhuongXa = tfAPhuong.getText();
+        hopDong.QuanHuyen = tfAQuang.getText();
+        hopDong.TinhTp = tfATinh.getText();
+        hopDong.SDTKhachHang = tfADienThoai.getText();
+        hopDong.Email = tfAEmail.getText();
+        hopDong.MaSoThueKhachHang = tfAMaSoThue.getText();
         //TODO: ADD DICH VU ID
-        hopDong.NhanBaoCuoc =String.valueOf(nhanBaoCuoc);
-        if(nhanBaoCuoc == 6)
+        hopDong.NhanBaoCuoc = String.valueOf(nhanBaoCuoc);
+        if (nhanBaoCuoc == 6) {
             hopDong.NhanBaoCuocKhac = tfBaoCuocKhac.getText();
-        else 
-            hopDong.NhanBaoCuocKhac= "";
+        } else {
+            hopDong.NhanBaoCuocKhac = "";
+        }
         hopDong.NhanBanKe = String.valueOf(banKe);
-        if(banKe == 5)
+        if (banKe == 5) {
             hopDong.NhanBanKeKhac = tfBanKeKhac.getText();
-        else 
-            hopDong.NhanBanKeKhac= "";  
+        } else {
+            hopDong.NhanBanKeKhac = "";
+        }
         hopDong.ThanhToan = String.valueOf(thanhToan);
-        if(thanhToan == 6)
+        if (thanhToan == 6) {
             hopDong.ThanhToanKhac = tfThanhToanKhac.getText();
-        else 
+        } else {
             hopDong.ThanhToanKhac = "";
+        }
         hopDong.EmailNhanBaoCuoc = tfEmailNhanBaoCuoc.getText();
         hopDong.SDTNhanBaoCuoc = tfSDTNhanBaoCuoc.getText();
         hopDong.SoTaiKhoanThanhToan = tfSoTaiKhoan.getText();
         hopDong.NganHang = tfNganHang.getText();
         hopDong.ChiNhanh = tfChiNhanh.getText();
-        
+
     }
-    
+
+    private String parseDate(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        if (date == null) {
+            return "";
+        }
+        String strDate = sdf.format(date);
+        return strDate;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup NhanBanKe;

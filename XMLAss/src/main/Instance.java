@@ -33,7 +33,7 @@ public class Instance {
                     "Thanh Toan Khac","So Tai Khoan Thanh Toan","Ngan Hang","Chi Nhanh"};
     
     private static Instance i;
-    public static String idContract = "0";
+    public static String idContract = "-1";
     public static String MaDL= "DL002";
     public static int agentID = 0;
     public static int xStatus = -2;

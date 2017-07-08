@@ -29,9 +29,12 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import main.Instance;
+import main.Object.HopDong;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * @author khang
@@ -126,211 +129,17 @@ public class DataAccessObject implements Serializable {
         return ps.executeQuery();
     }
     
-//    public ResultSet getResulSet(String sqlSelect) throws Exception {
-//        PreparedStatement ps = conn.prepareStatement(sqlSelect);
-//            
-//        return ps.executeQuery();
-//    }
-
     public ResultSet getAllFromTable(String tableName) throws Exception {
         String sql = "Select * from " + tableName;
         return getResulSet(sql);
     }
     
-    public void CreateXMLData(ResultSet rs){
-        String result = "";
-        try {
-            result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <root>\n";
-            
-            while(rs.next()){
-                result += "<Contract>\n";
-                result += "<SoHopDong>\n";
-                result += rs.getString("SoHopDong")+"\n";
-                result += "</SoHopDong>\n";
-                
-                result += "<MaKhachHang>\n";
-                result += rs.getString("MaKhachHang")+"\n";
-                result += "</MaKhachHang>\n";
-                
-                result += "<MaDaiLy>\n";
-                result += rs.getString("MaDaiLy")+"\n";
-                result += "</MaDaiLy>\n";
-                
-                result += "<NgayDKHopDong>\n";
-                result += rs.getString("NgayDKHopDong")+"\n";
-                result += "</NgayDKHopDong>\n";
-                
-                result += "<DiaDiemDKHopDong>\n";
-                result += rs.getString("DiaDiemDKHopDong")+"\n";
-                result += "</DiaDiemDKHopDong>\n";
-                
-                result += "<TenKhachHang>\n";
-                result += rs.getString("TenKhachHang")+"\n";
-                result += "</TenKhachHang>\n";
-                
-                result += "<NguoiDaiDien>\n";
-                result += rs.getString("NguoiDaiDien")+"\n";
-                result += "</NguoiDaiDien>\n";
-                
-                result += "<ChucVu>\n";
-                result += rs.getString("ChucVu")+"\n";
-                result += "</ChucVu>\n";
-                
-                result += "<NgaySinh>\n";
-                result += rs.getString("NgaySinh")+"\n";
-                result += "</NgaySinh>\n";
-                
-                result += "<GioiTinh>\n";
-                result += rs.getString("GioiTinh")+"\n";
-                result += "</GioiTinh>\n";
-                
-                result += "<CMND>\n";
-                result += rs.getString("CMND")+"\n";
-                result += "</CMND>\n";
-                
-                result += "<NoiCapCMND>\n";
-                result += rs.getString("NoiCapCMND")+"\n";
-                result += "</NoiCapCMND>\n";
-                
-                result += "<NgayCapCMND>\n";
-                result += rs.getString("NgayCapCMND")+"\n";
-                result += "</NgayCapCMND>\n";
-                
-                result += "<SoHoKhau>\n";
-                result += rs.getString("SoHoKhau")+"\n";
-                result += "</SoHoKhau>\n";
-                
-                result += "<NoiCapSoHoKhau>\n";
-                result += rs.getString("NoiCapSoHoKhau")+"\n";
-                result += "</NoiCapSoHoKhau>\n";
-                
-                result += "<NgayCapSoHoKhau>\n";
-                result += rs.getString("NgayCapSoHoKhau")+"\n";
-                result += "</NgayCapSoHoKhau>\n";
-                
-                result += "<SoGiayChungNhanDKDN>\n";
-                result += rs.getString("SoGiayChungNhanDKDN")+"\n";
-                result += "</SoGiayChungNhanDKDN>\n";
-                
-                result += "<NoiCapDKDN>\n";
-                result += rs.getString("NoiCapDKDN")+"\n";
-                result += "</NoiCapDKDN>\n";
-                
-                result += "<NgayCapDKDN>\n";
-                result += rs.getString("NgayCapDKDN")+"\n";
-                result += "</NgayCapDKDN>\n";
-                
-                result += "<SoNha>\n";
-                result += rs.getString("SoNha")+"\n";
-                result += "</SoNha>\n";
-                
-                result += "<Duong>\n";
-                result += rs.getString("Duong")+"\n";
-                result += "</Duong>\n";
-                
-                result += "<xTo>\n";
-                result += rs.getString("xTo")+"\n";
-                result += "</xTo>\n";
-                
-                result += "<PhuongXa>\n";
-                result += rs.getString("PhuongXa")+"\n";
-                result += "</PhuongXa>\n";
-                
-                result += "<QuanHuyen>\n";
-                result += rs.getString("QuanHuyen")+"\n";
-                result += "</QuanHuyen>\n";
-                
-                result += "<TinhTp>\n";
-                result += rs.getString("TinhTp")+"\n";
-                result += "</TinhTp>\n";
-                
-                result += "<SDTKhachHang>\n";
-                result += rs.getString("SDTKhachHang")+"\n";
-                result += "</SDTKhachHang>\n";
-                
-                
-                result += "<Email>\n";
-                result += rs.getString("Email")+"\n";
-                result += "</Email>\n";
-                
-                result += "<MaSoThueKhachHang>\n";
-                result += rs.getString("MaSoThueKhachHang")+"\n";
-                result += "</MaSoThueKhachHang>\n";
-                
-                result += "<DichVuID>\n";
-                result += rs.getString("DichVuID")+"\n";
-                result += "</DichVuID>\n";
-                
-                result += "<NhanBaoCuoc>\n";
-                result += rs.getString("NhanBaoCuoc")+"\n";
-                result += "</NhanBaoCuoc>\n";
-                
-                result += "<NhanBaoCuocKhac>\n";
-                result += rs.getString("NhanBaoCuocKhac")+"\n";
-                result += "</NhanBaoCuocKhac>\n";
-                
-                result += "<NhanBanKe>\n";
-                result += rs.getString("NhanBanKe")+"\n";
-                result += "</NhanBanKe>\n";
-                
-                result += "<NhanBanKeKhac>\n";
-                result += rs.getString("NhanBanKeKhac")+"\n";
-                result += "</NhanBanKeKhac>\n";
-                
-                result += "<EmailNhanBaoCuoc>\n";
-                result += rs.getString("EmailNhanBaoCuoc")+"\n";
-                result += "</EmailNhanBaoCuoc>\n";
-                
-                result += "<SDTNhanBaoCuoc>\n";
-                result += rs.getString("SDTNhanBaoCuoc")+"\n";
-                result += "</SDTNhanBaoCuoc>\n";
-                
-                result += "<ThanhToan>\n";
-                result += rs.getString("ThanhToan")+"\n";
-                result += "</ThanhToan>\n";
-                
-                result += "<ThanhToanKhac>\n";
-                result += rs.getString("ThanhToanKhac")+"\n";
-                result += "</ThanhToanKhac>\n";
-                
-                result += "<SoTaiKhoanThanhToan>\n";
-                result += rs.getString("SoTaiKhoanThanhToan")+"\n";
-                result += "</SoTaiKhoanThanhToan>\n";
-                
-                result += "<NganHang>\n";
-                result += rs.getString("NganHang")+"\n";
-                result += "</NganHang>\n";
-                
-                result += "<ChiNhanh>\n";
-                result += rs.getString("ChiNhanh")+"\n";
-                result += "</ChiNhanh>\n";
-                
-                result += "<xStatus>\n";
-                result += rs.getString("xStatus")+"\n";
-                result += "</xStatus>\n";
-                
-                result += "</Contract>\n";
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally{
-            result += "</root>\n";
-            
-            try {
-                PrintWriter out = new PrintWriter("E:\\Learn\\XML\\assxml\\XMLAss\\src\\db\\dataClient.txt");
-                out.print(result);
-                out.close();
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
-            }
+  
 
-        }
-    }
-
-    public void CreateXML(ResultSet rs) throws SQLException{
+    public void CreateXML() throws SQLException{
         try {
+            ResultSet rs = getResulSet("select * from ContractsLocal where MaDaiLy = '"+Instance.MaDL+"'");
+            
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
@@ -339,7 +148,7 @@ public class DataAccessObject implements Serializable {
             doc.appendChild(root);
             
             while(rs.next()){
-                Element Contract = doc.createElement("Contract");
+                Element Contract = doc.createElement("ContractLocal");
                 root.appendChild(Contract);
                 Element nextElement;
                
@@ -356,11 +165,20 @@ public class DataAccessObject implements Serializable {
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
+            
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File(".\\client\\fileXMLNew.xml"));
+            String fileName = "client\\Data_"+Instance.MaDL+".xml";
+            StreamResult result = new StreamResult(new File(fileName));
 
             transformer.transform(source, result);
 
+            executeSQLwithParams("delete from ContractsLocal where MaDaiLy = '"+Instance.MaDL+"'",MODE_UPDATE.SMALL_UPDATE);
+            
             System.out.println("File saved!");
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
@@ -368,35 +186,163 @@ public class DataAccessObject implements Serializable {
             Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransformerException ex) {
             Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
     
-    private void SetChild(Document d, Element Contract, String name, ResultSet rs){
-        try {
-            Element need =d.createElement(name);
-            need.appendChild(d.createTextNode(rs.getString(name)));
-            Contract.appendChild(need);
-            System.out.println(rs.getString(name));
-
-        } catch (SQLException ex) {
-            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
     public void CreateLocalContracts() throws Exception{
+            new DataAccessObject().CreateXML();
+    }
+
+    public void ReadFileXMLAndUpdate(){
         try {
-            ResultSet rs = new DataAccessObject().getAllFromTable("ContractsLocal");
+            File fXmlFile = new File("Server\\AllData.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+
+            //optional, but recommended
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+
+            NodeList nList = doc.getElementsByTagName("Contract");
+
+            System.out.println("----------------------------");
+            HopDong[] h = new HopDong[ nList.getLength()];
             
-            new DataAccessObject().CreateXML(rs);
-        } catch (SQLException ex) {
-            Logger.getLogger(DataAccessObject.class.getName()).log(Level.SEVERE, null, ex);
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+                Node nNode = nList.item(temp);
+
+                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element eElement = (Element) nNode;
+
+                    System.out.println("SoHopDong : "+h.length+" " + eElement.getElementsByTagName("SoHopDong").item(0).getTextContent());
+                    System.out.println("MaKhachHang : " + eElement.getElementsByTagName("MaKhachHang").item(0).getTextContent());
+                    System.out.println("MaDaiLy : " + eElement.getElementsByTagName("MaDaiLy").item(0).getTextContent());
+                    System.out.println("NgayDKHopDong : " + eElement.getElementsByTagName("NgayDKHopDong").item(0).getTextContent());
+                    h[temp] = new HopDong();
+                    h[temp].SoHopDong= eElement.getElementsByTagName("SoHopDong").item(0).getTextContent();
+                    h[temp].MaKhachHang=   eElement.getElementsByTagName("MaKhachHang").item(0).getTextContent();
+                    h[temp].MaDaiLy =   eElement.getElementsByTagName("MaDaiLy").item(0).getTextContent();
+                    h[temp].NgayDKHopDong=   eElement.getElementsByTagName("NgayDKHopDong").item(0).getTextContent();
+                    h[temp].DiaDiemDKHopDong =     eElement.getElementsByTagName("DiaDiemDKHopDong").item(0).getTextContent();
+                    h[temp].TenKhachHang =     eElement.getElementsByTagName("TenKhachHang").item(0).getTextContent();
+                    h[temp].NguoiDaiDien=    eElement.getElementsByTagName("NguoiDaiDien").item(0).getTextContent();
+                    h[temp].ChucVu =   eElement.getElementsByTagName("ChucVu").item(0).getTextContent();
+                    h[temp].NgaySinh = eElement.getElementsByTagName("NgaySinh").item(0).getTextContent();
+                    h[temp].GioiTinh =     eElement.getElementsByTagName("GioiTinh").item(0).getTextContent();
+                    h[temp].CMND =    eElement.getElementsByTagName("CMND").item(0).getTextContent();
+                    h[temp].NoiCapCMND =   eElement.getElementsByTagName("NoiCapCMND").item(0).getTextContent();
+                    h[temp].NgayCapCMND =   eElement.getElementsByTagName("NgayCapCMND").item(0).getTextContent();
+                    h[temp].SoHoKhau =    eElement.getElementsByTagName("SoHoKhau").item(0).getTextContent();
+                    h[temp].NoiCapSoHoKhau =   eElement.getElementsByTagName("NoiCapSoHoKhau").item(0).getTextContent();
+                    h[temp].NgayCapSoHoKhau=   eElement.getElementsByTagName("NgayCapSoHoKhau").item(0).getTextContent();
+                    h[temp].SoGiayChungNhanDKDN=     eElement.getElementsByTagName("SoGiayChungNhanDKDN").item(0).getTextContent();
+                    h[temp].NoiCapDKDN =   eElement.getElementsByTagName("NoiCapDKDN").item(0).getTextContent();
+                    h[temp].NgayCapDKDN=   eElement.getElementsByTagName("NgayCapDKDN").item(0).getTextContent();
+                    h[temp].SoNha =   eElement.getElementsByTagName("SoNha").item(0).getTextContent();
+                    h[temp].Duong =    eElement.getElementsByTagName("Duong").item(0).getTextContent();
+                    h[temp].xTo =    eElement.getElementsByTagName("xTo").item(0).getTextContent();
+                    h[temp].PhuongXa =    eElement.getElementsByTagName("PhuongXa").item(0).getTextContent();
+                    h[temp].QuanHuyen=   eElement.getElementsByTagName("QuanHuyen").item(0).getTextContent();
+                    h[temp].TinhTp =   eElement.getElementsByTagName("TinhTp").item(0).getTextContent();
+                    h[temp].SDTKhachHang =    eElement.getElementsByTagName("SDTKhachHang").item(0).getTextContent();
+                    h[temp].Email =     eElement.getElementsByTagName("Email").item(0).getTextContent();
+                    h[temp].MaSoThueKhachHang =   eElement.getElementsByTagName("MaSoThueKhachHang").item(0).getTextContent();
+                    h[temp].NhanBaoCuoc =eElement.getElementsByTagName("NhanBaoCuoc").item(0).getTextContent();
+                    h[temp].NhanBaoCuocKhac = eElement.getElementsByTagName("NhanBaoCuocKhac").item(0).getTextContent();
+                    h[temp].NhanBanKe = eElement.getElementsByTagName("NhanBanKe").item(0).getTextContent();
+                    h[temp].NhanBanKeKhac = eElement.getElementsByTagName("NhanBanKeKhac").item(0).getTextContent();
+                    h[temp].ThanhToan = eElement.getElementsByTagName("ThanhToan").item(0).getTextContent();
+                    h[temp].ThanhToanKhac = eElement.getElementsByTagName("ThanhToanKhac").item(0).getTextContent();
+                    h[temp].EmailNhanBaoCuoc = eElement.getElementsByTagName("EmailNhanBaoCuoc").item(0).getTextContent();
+                    h[temp].SDTNhanBaoCuoc = eElement.getElementsByTagName("SDTNhanBaoCuoc").item(0).getTextContent();
+                    h[temp].SoTaiKhoanThanhToan = eElement.getElementsByTagName("SoTaiKhoanThanhToan").item(0).getTextContent();
+                    h[temp].NganHang = eElement.getElementsByTagName("NganHang").item(0).getTextContent();
+                    h[temp].ChiNhanh = eElement.getElementsByTagName("ChiNhanh").item(0).getTextContent();
+                }
+            }
+            
+            executeSQLwithParams("Drop table Contracts",MODE_UPDATE.SMALL_UPDATE);
+            executeSQLwithParams("CREATE TABLE Contracts (\n" +
+                                "  id int NOT NULL primary key identity(1,1),\n" +
+                                "  SoHopDong varchar(255) DEFAULT NULL,\n" +
+                                "  MaKhachHang varchar(255) DEFAULT NULL,\n" +
+                                "  MaDaiLy varchar(255) DEFAULT NULL,\n" +
+                                "  NgayDKHopDong varchar(255) DEFAULT NULL,\n" +
+                                "  DiaDiemDKHopDong varchar(255) DEFAULT NULL,\n" +
+                                "  TenKhachHang varchar(255) DEFAULT NULL,\n" +
+                                "  NguoiDaiDien varchar(255) DEFAULT NULL,\n" +
+                                "  ChucVu varchar(255) DEFAULT NULL,\n" +
+                                "  NgaySinh varchar(255) DEFAULT NULL,\n" +
+                                "  GioiTinh varchar(255) DEFAULT NULL,\n" +
+                                "  CMND varchar(13) DEFAULT NULL,\n" +
+                                "  NoiCapCMND varchar(255) DEFAULT NULL,\n" +
+                                "  NgayCapCMND varchar(255) DEFAULT NULL,\n" +
+                                "  SoHoKhau varchar(255) DEFAULT NULL,\n" +
+                                "  NoiCapSoHoKhau varchar(255) DEFAULT NULL,\n" +
+                                "  NgayCapSoHoKhau varchar(255) DEFAULT NULL,\n" +
+                                "  SoGiayChungNhanDKDN varchar(255) DEFAULT NULL,\n" +
+                                "  NoiCapDKDN varchar(255) DEFAULT NULL,\n" +
+                                "  NgayCapDKDN varchar(255) DEFAULT NULL,\n" +
+                                "  SoNha varchar(255) DEFAULT NULL,\n" +
+                                "  Duong varchar(255) DEFAULT NULL,\n" +
+                                "  xTo varchar(255) DEFAULT NULL,\n" +
+                                "  PhuongXa varchar(255) DEFAULT NULL,\n" +
+                                "  QuanHuyen varchar(255) DEFAULT NULL,\n" +
+                                "  TinhTp varchar(255) DEFAULT NULL,\n" +
+                                "  SDTKhachHang varchar(100) DEFAULT NULL,\n" +
+                                "  Email varchar(255) DEFAULT NULL,\n" +
+                                "  MaSoThueKhachHang varchar(255) DEFAULT NULL,\n" +
+                                "  DichVuID varchar(255) DEFAULT NULL,\n" +
+                                "  NhanBaoCuoc varchar(255) DEFAULT NULL,\n" +
+                                "  NhanBaoCuocKhac varchar(255) DEFAULT NULL,\n" +
+                                "  NhanBanKe varchar(255) DEFAULT NULL,\n" +
+                                "  NhanBanKeKhac varchar(255) DEFAULT NULL,\n" +
+                                "  EmailNhanBaoCuoc varchar(255) DEFAULT NULL,\n" +
+                                "  SDTNhanBaoCuoc varchar(100) DEFAULT NULL,\n" +
+                                "  ThanhToan varchar(255) DEFAULT NULL,\n" +
+                                "  ThanhToanKhac varchar(255) DEFAULT NULL,\n" +
+                                "  SoTaiKhoanThanhToan varchar(255) DEFAULT NULL,\n" +
+                                "  NganHang varchar(255) DEFAULT NULL,\n" +
+                                "  ChiNhanh varchar(255) DEFAULT NULL\n" +
+                                ") ",MODE_UPDATE.SMALL_UPDATE);
+            
+            
+            for(int i = 0; i < h.length; i++){
+                String action = "Insert";
+                
+                String sql = action+" into Contracts (SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
+                    + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
+                    + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
+                    + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
+                    + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
+                    + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh)"
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
+                        h[i].SoHopDong, h[i].MaKhachHang, h[i].MaDaiLy, h[i].NgayDKHopDong, h[i].DiaDiemDKHopDong,
+                        h[i].TenKhachHang, h[i].NguoiDaiDien, h[i].ChucVu, h[i].NgaySinh, h[i].GioiTinh, h[i].CMND, h[i].NoiCapCMND, h[i].NgayCapCMND, h[i].SoHoKhau,
+                        h[i].NoiCapSoHoKhau, h[i].NgayCapSoHoKhau, h[i].SoGiayChungNhanDKDN, h[i].NoiCapDKDN, h[i].NgayCapDKDN, h[i].SoNha, h[i].Duong, h[i].xTo,
+                        h[i].PhuongXa, h[i].QuanHuyen, h[i].TinhTp, h[i].SDTKhachHang, h[i].Email, h[i].MaSoThueKhachHang, h[i].DichVuID, h[i].NhanBaoCuoc,
+                        h[i].NhanBaoCuocKhac, h[i].NhanBanKe, h[i].NhanBanKeKhac, h[i].EmailNhanBaoCuoc, h[i].SDTNhanBaoCuoc, h[i].ThanhToan,
+                        h[i].ThanhToanKhac, h[i].SoTaiKhoanThanhToan, h[i].NganHang, h[i].ChiNhanh
+                );
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     
     public static void main(String[] args) throws Exception {
-//        ResultSet rs = new DataAccessObject().getAllFromTable("ContractsLocal");
-////        new DataAccessObject().CreateXMLData(rs);
-//
-//        new DataAccessObject().CreateXML(rs);
+//        new DataAccessObject().CreateXML();
+
+        new DataAccessObject().ReadFileXMLAndUpdate();
     }
 }

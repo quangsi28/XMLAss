@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <ContractLocal>
+        <SoHopDong>24</SoHopDong>
+        <MaKhachHang>24</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>04/04/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Kasper Avery</TenKhachHang>
+        <NguoiDaiDien>Christopher Strong</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>29/11/1995</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1613120772099</CMND>
+        <NoiCapCMND>Thanh Hoa</NoiCapCMND>
+        <NgayCapCMND>11/06/2006</NgayCapCMND>
+        <SoHoKhau>44231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>11/08/2011</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>11271</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>23/08/2000</NgayCapDKDN>
+        <SoNha>34</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Noi</TinhTp>
+        <SDTKhachHang>022-993-2630</SDTKhachHang>
+        <Email>turpis.In@mollisPhasellus.net</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>24</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>et risus. Quisque libero lacus, varius et, euismod et, commodo</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>egestas.nunc.sed@massalobortisultrices.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>055-201-4367</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>in consectetuer</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4485418490909876</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Roosdaal</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>24</SoHopDong>
+        <MaKhachHang>24</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>04/04/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Kasper Avery</TenKhachHang>
+        <NguoiDaiDien>Christopher Strong</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>29/11/1995</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1613120772099</CMND>
+        <NoiCapCMND>Thanh Hoa</NoiCapCMND>
+        <NgayCapCMND>11/06/2006</NgayCapCMND>
+        <SoHoKhau>44231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>11/08/2011</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>11271</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>23/08/2000</NgayCapDKDN>
+        <SoNha>34</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Noi</TinhTp>
+        <SDTKhachHang>022-993-2630</SDTKhachHang>
+        <Email>turpis.In@mollisPhasellus.net</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>24</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>et risus. Quisque libero lacus, varius et, euismod et, commodo</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>egestas.nunc.sed@massalobortisultrices.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>055-201-4367</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>in consectetuer</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4485418490909876</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Roosdaal</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>15</SoHopDong>
+        <MaKhachHang>15</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>14/05/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Mason Miranda</TenKhachHang>
+        <NguoiDaiDien>Lamar Duke</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>21/09/1995</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1641082634399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>11/09/2007</NgayCapCMND>
+        <SoHoKhau>77875</SoHoKhau>
+        <NoiCapSoHoKhau>Nghe An</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>05/06/2013</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>85765</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
+        <NgayCapDKDN>29/05/2016</NgayCapDKDN>
+        <SoNha>71</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>004-445-0123</SDTKhachHang>
+        <Email>enim.Suspendisse.aliquet@massaMauris.edu</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>15</DichVuID>
+        <NhanBaoCuoc>5</NhanBaoCuoc>
+        <NhanBaoCuocKhac>ante. Vivamus non lorem vitae odio sagittis semper. Nam</NhanBaoCuocKhac>
+        <NhanBanKe>5</NhanBanKe>
+        <NhanBanKeKhac>nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>Proin.ultrices@Nulla.com</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>032-003-8791</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>quam. Pellentesque habitant morbi tristique senectus et netus</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4929956805005835</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Boussu-lez-Walcourt</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>9</SoHopDong>
+        <MaKhachHang>9</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>08/01/2016</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Jordan Faulkner</TenKhachHang>
+        <NguoiDaiDien>Brent Bonner</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>03/01/1987</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1680091681399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>12/01/2006</NgayCapCMND>
+        <SoHoKhau>76607</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Noi</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>08/01/2014</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>66496</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>05/01/2009</NgayCapDKDN>
+        <SoNha>13</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>039-530-0422</SDTKhachHang>
+        <Email>ad@accumsansedfacilisis.org</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID/>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>2</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>lectus.convallis.est@cursus.ca</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>066-939-6355</SDTNhanBaoCuoc>
+        <ThanhToan>6</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4556113976358</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Halifax</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>9</SoHopDong>
+        <MaKhachHang>9</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>08/01/2016</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Jordan Faulkner</TenKhachHang>
+        <NguoiDaiDien>Brent Bonner</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>03/01/1987</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1680091681399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>12/01/2006</NgayCapCMND>
+        <SoHoKhau>76607</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Noi</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>08/01/2014</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>66496</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>05/01/2009</NgayCapDKDN>
+        <SoNha>13</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>039-530-0422</SDTKhachHang>
+        <Email>ad@accumsansedfacilisis.org</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID/>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>2</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>lectus.convallis.est@cursus.ca</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>066-939-6355</SDTNhanBaoCuoc>
+        <ThanhToan>6</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4556113976358</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Halifax</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>9</SoHopDong>
+        <MaKhachHang>9</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>08/01/2016</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Jordan Faulkner</TenKhachHang>
+        <NguoiDaiDien>Brent Bonner</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>03/01/1987</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1680091681399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>12/01/2006</NgayCapCMND>
+        <SoHoKhau>76607</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Noi</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>08/01/2014</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>66496</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>05/01/2009</NgayCapDKDN>
+        <SoNha>13</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>039-530-0422</SDTKhachHang>
+        <Email>ad@accumsansedfacilisis.org</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID/>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>2</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>lectus.convallis.est@cursus.ca</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>066-939-6355</SDTNhanBaoCuoc>
+        <ThanhToan>6</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4556113976358</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Halifax</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>24</SoHopDong>
+        <MaKhachHang>24</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>04/04/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Kasper Avery</TenKhachHang>
+        <NguoiDaiDien>Christopher Strong</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>29/11/1995</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1613120772099</CMND>
+        <NoiCapCMND>Thanh Hoa</NoiCapCMND>
+        <NgayCapCMND>11/06/2006</NgayCapCMND>
+        <SoHoKhau>44231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>11/08/2011</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>11271</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>23/08/2000</NgayCapDKDN>
+        <SoNha>34</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Noi</TinhTp>
+        <SDTKhachHang>022-993-2630</SDTKhachHang>
+        <Email>turpis.In@mollisPhasellus.net</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>24</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>et risus. Quisque libero lacus, varius et, euismod et, commodo</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>egestas.nunc.sed@massalobortisultrices.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>055-201-4367</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>in consectetuer</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4485418490909876</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Roosdaal</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>24</SoHopDong>
+        <MaKhachHang>24</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>04/04/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Kasper Avery</TenKhachHang>
+        <NguoiDaiDien>Christopher Strong</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>29/11/1995</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1613120772099</CMND>
+        <NoiCapCMND>Thanh Hoa</NoiCapCMND>
+        <NgayCapCMND>11/06/2006</NgayCapCMND>
+        <SoHoKhau>44231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>11/08/2011</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>11271</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>23/08/2000</NgayCapDKDN>
+        <SoNha>34</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Noi</TinhTp>
+        <SDTKhachHang>022-993-2630</SDTKhachHang>
+        <Email>turpis.In@mollisPhasellus.net</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>24</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>et risus. Quisque libero lacus, varius et, euismod et, commodo</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>egestas.nunc.sed@massalobortisultrices.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>055-201-4367</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>in consectetuer</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4485418490909876</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Roosdaal</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+    <ContractLocal>
+        <SoHopDong>24</SoHopDong>
+        <MaKhachHang>24</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>04/04/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Kasper Avery</TenKhachHang>
+        <NguoiDaiDien>Christopher Strong</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>29/11/1995</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1613120772099</CMND>
+        <NoiCapCMND>Thanh Hoa</NoiCapCMND>
+        <NgayCapCMND>11/06/2006</NgayCapCMND>
+        <SoHoKhau>44231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>11/08/2011</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>11271</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>23/08/2000</NgayCapDKDN>
+        <SoNha>34</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Noi</TinhTp>
+        <SDTKhachHang>022-993-2630</SDTKhachHang>
+        <Email>turpis.In@mollisPhasellus.net</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>24</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>et risus. Quisque libero lacus, varius et, euismod et, commodo</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>egestas.nunc.sed@massalobortisultrices.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>055-201-4367</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>in consectetuer</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4485418490909876</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Roosdaal</ChiNhanh>
+        <xStatus>-1</xStatus>
+    </ContractLocal>
+</root>

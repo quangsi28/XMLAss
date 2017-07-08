@@ -76,6 +76,11 @@ public class MainAction extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("Đồng bộ tất cả");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +116,8 @@ public class MainAction extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Instance.xStatus = 0;
+        System.out.println("MaDL "+Instance.MaDL);
         CreateFormClient();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -123,12 +130,21 @@ public class MainAction extends javax.swing.JFrame {
         try {
             if(db==null)
                 db = new DataAccessObject();
-            
+
             db.CreateLocalContracts();
         } catch (Exception ex) {
             Logger.getLogger(MainAction.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if(db==null)
+                db = new DataAccessObject();
+        
+        db.executeSQL("Delete from contracts");
+        
+        db.ReadFileXMLAndUpdate();
+    }//GEN-LAST:event_jButton4ActionPerformed
     
     private void CreateFormClient(){
         FromClient f = new FromClient();

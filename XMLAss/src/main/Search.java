@@ -13,45 +13,47 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
 
 /**
  *
  * @author Windows
  */
 public class Search extends javax.swing.JFrame {
+
     DataAccessObject db;
-    int[] widthColumn={50,50,50,50,50,100,100,100,100,100,100,100,100,100,
-                           100,100,100,100,100,100,100,100,100,100,100,100,100,100,
-                           100,75,75,75,75,100,100,100,50,50,50,50,50,50,
-                            };
+    int[] widthColumn = {50, 50, 50, 50, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100,
+        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
+        100, 75, 75, 75, 75, 100, 100, 100, 50, 50, 50, 50, 50, 50,};
+
     /**
      * Creates new form Search
      */
     public Search() {
         initComponents();
+
         db = new DataAccessObject();
-//        fillData();
+//        fillData();itable(int rowIndex, int mColIndex) {
+
         loadData();
         tblData.setDragEnabled(false);
         tblData.setRowSelectionAllowed(true);
-        
-        JTextField tf = new JTextField();
-        tf.setEditable(false);
-        DefaultCellEditor editor = new DefaultCellEditor( tf );
-        tblData.setDefaultEditor(Object.class, editor);
-        
-        
+
+//        JTextField tf = new JTextField();
+//        tf.setEditable(false);
+//        DefaultCellEditor editor = new DefaultCellEditor( tf );
+//        tblData.setDefaultEditor(Object.class, editor);
         cbbItem.removeAllItems();
-        for(int i = 0; i < Instance.data.length-1; i++){
+        for (int i = 0; i < Instance.data.length - 1; i++) {
             cbbItem.addItem(Instance.dataShow[i]);
         }
-    }        
-
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,6 +106,11 @@ public class Search extends javax.swing.JFrame {
     jScrollPane3.setViewportView(tblData);
 
     jButton1.setText("Xóa");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+        }
+    });
 
     jButton2.setText("Sửa");
     jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +167,66 @@ public class Search extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            String idContract = "";
+            int row = tblData.getSelectedRow();
+
+            ResultSet rs = db.getResulSet("Select * from Contracts where SoHopDong = '" + tblData.getValueAt(row, 0).toString() + "'");
+            if (!rs.next()) {
+                return;
+            }
+
+            idContract = rs.getString(1);
+            Instance.idContract = idContract;
+            Instance.xStatus = 1;
+
+            CreateFormClient();
+        } catch (SQLException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int clickSave = JOptionPane.showConfirmDialog(null, "Tạo hợp đồng mới?", null, JOptionPane.YES_NO_OPTION);
+        if (clickSave == JOptionPane.YES_OPTION) {
+            try {
+                // TODO add your handling code here:
+                String idContract = "";
+                int row = tblData.getSelectedRow();
+
+                idContract = tblData.getValueAt(row, 1).toString();
+                Instance.idContract = idContract;
+                ResultSet rs = db.getResulSet("Select * from Contracts where id = '" + idContract + "'");
+
+                if (!rs.next()) {
+                    return;
+                }
+
+                String sql = "Insert into ContractsLocal (id, SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
+                        + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
+                        + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
+                        + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
+                        + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
+                        + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh, xStatus)"
+                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, rs.getString(1),
+                        rs.getString("SoHopDong"), rs.getString("MaKhachHang"), rs.getString("MaDaiLy"), rs.getString("NgayDKHopDong"), rs.getString("DiaDiemDKHopDong"),
+                        rs.getString("TenKhachHang"), rs.getString("NguoiDaiDien"), rs.getString("ChucVu"), rs.getString("NgaySinh"), rs.getString("GioiTinh"), rs.getString("CMND"), rs.getString("NoiCapCMND"), rs.getString("NgayCapCMND"), rs.getString("SoHoKhau"),
+                        rs.getString("NoiCapSoHoKhau"), rs.getString("NgayCapSoHoKhau"), rs.getString("SoGiayChungNhanDKDN"), rs.getString("NoiCapDKDN"), rs.getString("NgayCapDKDN"), rs.getString("SoNha"), rs.getString("Duong"), rs.getString("xTo"),
+                        rs.getString("PhuongXa"), rs.getString("QuanHuyen"), rs.getString("TinhTp"), rs.getString("SDTKhachHang"), rs.getString("Email"), rs.getString("MaSoThueKhachHang"), rs.getString("DichVuID"), rs.getString("NhanBaoCuoc"),
+                        rs.getString("NhanBaoCuocKhac"), rs.getString("NhanBanKe"), rs.getString("NhanBanKeKhac"), rs.getString("EmailNhanBaoCuoc"), rs.getString("SDTNhanBaoCuoc"), rs.getString("ThanhToan"),
+                        rs.getString("ThanhToanKhac"), rs.getString("SoTaiKhoanThanhToan"), rs.getString("NganHang"), rs.getString("ChiNhanh"), "-1"
+                );
+
+                db.executeSQLwithParams("delete from Contracts where id = '" + idContract + "'", DataAccessObject.MODE_UPDATE.SMALL_UPDATE);
+                System.out.println("delete from Contracts where id = '" + idContract + "'");
+            } catch (Exception ex) {
+                Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,7 +237,7 @@ public class Search extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
+
         //</editor-fold>
 
         /* Create and display the form */
@@ -181,31 +247,48 @@ public class Search extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void searchingWithCondition(){
-        int columnSearch = cbbItem.getSelectedIndex()+1;
-        String searchKey  = tfSearchText.getText();
-        DefaultTableModel model = new DefaultTableModel();
+
+    void CreateFormClient() {
+        FromClient f = new FromClient();
+        f.setVisible(true);
+        f.setFocusable(true);
+        setFocusable(false);
+        setEnabled(false);
+        setVisible(false);
+    }
+
+    public void searchingWithCondition() {
+        int columnSearch = cbbItem.getSelectedIndex();
+        String searchKey = tfSearchText.getText();
+        DefaultTableModel model = new DefaultTableModel() {
+            public boolean isCellEditable(int rowIndex, int mColIndex) {
+                return false;
+            }
+        };
         try {
-            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '"+Instance.MaDL+"'");
+            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '" + Instance.MaDL + "' and "
+                    + Instance.data[columnSearch] + " like '%" + searchKey + "%'");
 
             ResultSetMetaData rsmd = rs.getMetaData();
-            int colNumber = rsmd.getColumnCount();
-            String[] arr = Instance.dataShow;
-            
-            model.setColumnIdentifiers(arr);
-            
-            while(rs.next()){
-                arr = new String[colNumber];
-                String bufferString = rs.getString(columnSearch+1);
-                if(bufferString.contains(searchKey)){
-                    for (int i = 0; i < colNumber; i++) {
-                        arr[i] = rs.getString(i + 2);
-                    }
-                    model.addRow(arr);
-                }
+            int colNumber = rsmd.getColumnCount() - 1;
+            String[] arr = new String[colNumber];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = new String(Instance.dataShow[i]);
             }
-            
+
+            model.setColumnIdentifiers(arr);
+
+            while (rs.next()) {
+//                arr = new String[colNumber];
+//                String bufferString = rs.getString(columnSearch+1);
+//                if(bufferString.contains(searchKey)){
+                for (int i = 0; i < colNumber; i++) {
+                    arr[i] = rs.getString(i + 2);
+                }
+                model.addRow(arr);
+//                }
+            }
+
             tblData.setModel(model);
             tblData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
             setColumnWidth(widthColumn, colNumber);
@@ -214,18 +297,25 @@ public class Search extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
+
     public void loadData() {
-        
-        DefaultTableModel model = new DefaultTableModel();
+
+        DefaultTableModel model = new DefaultTableModel() {
+            public boolean isCellEditable(int rowIndex, int mColIndex) {
+                return false;
+            }
+        };
         try {
-            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '"+Instance.MaDL+"'");
-            
+            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '" + Instance.MaDL + "'");
+
             ResultSetMetaData rsmd = rs.getMetaData();
             int colNumber = rsmd.getColumnCount() - 1;
-            String[] arr = Instance.dataShow;
+            String[] arr = new String[colNumber];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = new String(Instance.dataShow[i]);
+            }
 
             model.setColumnIdentifiers(arr);
 
@@ -245,14 +335,14 @@ public class Search extends javax.swing.JFrame {
         }
 
     }
-    
+
     public void setColumnWidth(int[] width, int col) {
         for (int i = 0; i < col; i++) {
             TableColumn tableColumn = tblData.getColumnModel().getColumn(i);
             tableColumn.setPreferredWidth(width[i]);
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbbItem;

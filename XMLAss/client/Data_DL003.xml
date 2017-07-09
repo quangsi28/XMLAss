@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <Contract id="8">
+        <SoHopDong>12</SoHopDong>
+        <MaKhachHang>12</MaKhachHang>
+        <MaDaiLy>DL003</MaDaiLy>
+        <NgayDKHopDong>01/01/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>SiQuang</TenKhachHang>
+        <NguoiDaiDien>Si</NguoiDaiDien>
+        <ChucVu>Nhan Vien</ChucVu>
+        <NgaySinh>01/01/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1602120376399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>01/01/2005</NgayCapCMND>
+        <SoHoKhau>44138</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>01/01/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>76821</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
+        <NgayCapDKDN>01/01/2007</NgayCapDKDN>
+        <SoNha>54</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Nghe An</TinhTp>
+        <SDTKhachHang>098-822-6973</SDTKhachHang>
+        <Email>magnis.dis.parturient@tincidunt.co.uk</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>19</DichVuID>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>vel.est.tempor@vestibulumneceuismod.com</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>080-817-8232</SDTNhanBaoCuoc>
+        <ThanhToan>3</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4716457194486782</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Manfredonia</ChiNhanh>
+        <xStatus>1</xStatus>
+    </Contract>
+    <Service id="19">
+        <id>19</id>
+        <LoaiDichVu1/>
+        <DiaChiLapDat1/>
+        <SDTLapDat1/>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+        <xStatus>0</xStatus>
+    </Service>
+</root>

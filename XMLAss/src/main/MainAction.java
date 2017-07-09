@@ -67,7 +67,7 @@ public class MainAction extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton3.setText("Đồng bộ cục nộ");
+        jButton3.setText("Đồng bộ cục bộ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -132,18 +132,27 @@ public class MainAction extends javax.swing.JFrame {
                 db = new DataAccessObject();
 
             db.CreateLocalContracts();
+            new Client.Client().syncDataLocalToServer();
         } catch (Exception ex) {
             Logger.getLogger(MainAction.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if(db==null)
+        try {
+            if(db==null)
                 db = new DataAccessObject();
-        
-        db.executeSQL("Delete from contracts");
-        
-        db.ReadFileXMLAndUpdate();
+            
+            db.CreateLocalContracts();
+            
+            //TODO: them vao code truyen du lieu
+            new Client.Client().syncDataLocalToServer();
+            new Client.Client().syncAllData();
+            
+            db.ReadFileXMLAndUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(MainAction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
     
     private void CreateFormClient(){

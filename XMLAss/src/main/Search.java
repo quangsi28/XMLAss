@@ -5,6 +5,7 @@
  */
 package main;
 
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import db.DataAccessObject;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -16,6 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -39,16 +42,19 @@ public class Search extends javax.swing.JFrame {
         initComponents();
 
         db = new DataAccessObject();
-//        fillData();itable(int rowIndex, int mColIndex) {
-
         loadData();
+
         tblData.setDragEnabled(false);
         tblData.setRowSelectionAllowed(true);
-
-//        JTextField tf = new JTextField();
-//        tf.setEditable(false);
-//        DefaultCellEditor editor = new DefaultCellEditor( tf );
-//        tblData.setDefaultEditor(Object.class, editor);
+        tblData.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
+                public void valueChanged(ListSelectionEvent event) {
+                   CheckMaDaiLy();
+                }
+            });
+        
+        jButton1.setVisible(false);
+        jButton2.setVisible(false);
+        
         cbbItem.removeAllItems();
         for (int i = 0; i < Instance.data.length - 1; i++) {
             cbbItem.addItem(Instance.dataShow[i]);
@@ -71,6 +77,7 @@ public class Search extends javax.swing.JFrame {
         tblData = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +126,13 @@ public class Search extends javax.swing.JFrame {
         }
     });
 
+    jButton3.setText("Thoát");
+    jButton3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton3ActionPerformed(evt);
+        }
+    });
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -136,7 +150,11 @@ public class Search extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                     .addComponent(jButton2)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton1)))
+                    .addComponent(jButton1))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(26, 26, 26)))
             .addContainerGap())
     );
     layout.setVerticalGroup(
@@ -150,8 +168,10 @@ public class Search extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addComponent(jButton2))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
-            .addContainerGap())
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jButton3)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     pack();
@@ -189,44 +209,86 @@ public class Search extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int clickSave = JOptionPane.showConfirmDialog(null, "Tạo hợp đồng mới?", null, JOptionPane.YES_NO_OPTION);
+        int clickSave = JOptionPane.showConfirmDialog(null, "Xoá bản ghi?", null, JOptionPane.YES_NO_OPTION);
+        System.out.println("Nhac nho xoa ban ghi");
         if (clickSave == JOptionPane.YES_OPTION) {
             try {
                 // TODO add your handling code here:
-                String idContract = "";
+                String idContract = "", soHopDong = "", MaKhachHang = "";
                 int row = tblData.getSelectedRow();
 
-                idContract = tblData.getValueAt(row, 1).toString();
-                Instance.idContract = idContract;
-                ResultSet rs = db.getResulSet("Select * from Contracts where id = '" + idContract + "'");
+                soHopDong = tblData.getValueAt(row, 0).toString();
+                MaKhachHang = tblData.getValueAt(row, 1).toString();
+                ResultSet rs = db.getResulSet("Select * from Contracts where SoHopDong = '" + soHopDong + "' AND MaKhachHang = '" + MaKhachHang + "'");
+                if (rs.next()) {
+                    idContract = rs.getString(1);
+                    Instance.idContract = idContract;
+                    
+                    String idService = rs.getString("DichVuID");
 
-                if (!rs.next()) {
-                    return;
+                    String sql = "Insert into ContractsLocal (id, SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
+                            + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
+                            + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
+                            + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
+                            + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
+                            + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh, xStatus)"
+                            + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, rs.getString(1),
+                            rs.getString("SoHopDong"), rs.getString("MaKhachHang"), rs.getString("MaDaiLy"), rs.getString("NgayDKHopDong"), rs.getString("DiaDiemDKHopDong"),
+                            rs.getString("TenKhachHang"), rs.getString("NguoiDaiDien"), rs.getString("ChucVu"), rs.getString("NgaySinh"), rs.getString("GioiTinh"), rs.getString("CMND"), rs.getString("NoiCapCMND"), rs.getString("NgayCapCMND"), rs.getString("SoHoKhau"),
+                            rs.getString("NoiCapSoHoKhau"), rs.getString("NgayCapSoHoKhau"), rs.getString("SoGiayChungNhanDKDN"), rs.getString("NoiCapDKDN"), rs.getString("NgayCapDKDN"), rs.getString("SoNha"), rs.getString("Duong"), rs.getString("xTo"),
+                            rs.getString("PhuongXa"), rs.getString("QuanHuyen"), rs.getString("TinhTp"), rs.getString("SDTKhachHang"), rs.getString("Email"), rs.getString("MaSoThueKhachHang"), rs.getString("DichVuID"), rs.getString("NhanBaoCuoc"),
+                            rs.getString("NhanBaoCuocKhac"), rs.getString("NhanBanKe"), rs.getString("NhanBanKeKhac"), rs.getString("EmailNhanBaoCuoc"), rs.getString("SDTNhanBaoCuoc"), rs.getString("ThanhToan"),
+                            rs.getString("ThanhToanKhac"), rs.getString("SoTaiKhoanThanhToan"), rs.getString("NganHang"), rs.getString("ChiNhanh"), "-1"
+                    );
+
+                    System.out.println("Xoa xong ban ghi: " + rs.getString("id"));
+
+                    rs = db.getResulSet("Select * from ServicesLocal where id = '" + idService + "'");
+                    if (!rs.next()) {
+                        rs = db.getResulSet("Select * from Services where id = '" + idService + "'");
+                        if (rs.next()) {
+                            sql = "Insert into ServicesLocal (id, LoaiDichVu1, DiaChiLapDat1, SDTLapDat1, GoiCuoc1, PhiHoaMang1, GhiChu1,"
+                                    + " LoaiDichVu2, DiaChiLapDat2, SDTLapDat2, GoiCuoc2, PhiHoaMang2, GhiChu2,"
+                                    + " LoaiDichVu3, DiaChiLapDat3, SDTLapDat3, GoiCuoc3, PhiHoaMang3, GhiChu3,"
+                                    + " LoaiDichVu4, DiaChiLapDat4, SDTLapDat4, GoiCuoc4, PhiHoaMang4, GhiChu4,"
+                                    + " LoaiDichVu5, DiaChiLapDat5, SDTLapDat5, GoiCuoc5, PhiHoaMang5, GhiChu5, xStatus)"
+                                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, -1)";
+                            db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, idService,
+                                    rs.getString("LoaiDichVu1"), rs.getString("DiaChiLapDat1"), rs.getString("SDTLapDat1"), rs.getString("GoiCuoc1"), rs.getString("PhiHoaMang1"), rs.getString("GhiChu1"),
+                                    rs.getString("LoaiDichVu2"), rs.getString("DiaChiLapDat2"), rs.getString("SDTLapDat2"), rs.getString("GoiCuoc2"), rs.getString("PhiHoaMang2"), rs.getString("GhiChu2"),
+                                    rs.getString("LoaiDichVu3"), rs.getString("DiaChiLapDat3"), rs.getString("SDTLapDat3"), rs.getString("GoiCuoc3"), rs.getString("PhiHoaMang3"), rs.getString("GhiChu3"),
+                                    rs.getString("LoaiDichVu4"), rs.getString("DiaChiLapDat4"), rs.getString("SDTLapDat4"), rs.getString("GoiCuoc4"), rs.getString("PhiHoaMang4"), rs.getString("GhiChu4"),
+                                    rs.getString("LoaiDichVu5"), rs.getString("DiaChiLapDat5"), rs.getString("SDTLapDat5"), rs.getString("GoiCuoc5"), rs.getString("PhiHoaMang5"), rs.getString("GhiChu5")
+                            );
+                        }
+                    } else {
+                        sql = "Update ServicesLocal SET xStatus = -1 Where id = '" + idService + "'";
+                        db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE);
+                    }
+
+                    db.executeSQLwithParams("delete from Services where id = '" + idService + "'", DataAccessObject.MODE_UPDATE.SMALL_UPDATE);
+                    db.executeSQLwithParams("delete from Contracts where id = '" + idContract + "'", DataAccessObject.MODE_UPDATE.SMALL_UPDATE);
+                    System.out.println("delete from Contracts where id = '" + idContract + "'");
+
+                    searchingWithCondition();
+                } else{
+                    System.out.println("Tim khong ra: " + idContract);
                 }
-
-                String sql = "Insert into ContractsLocal (id, SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
-                        + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
-                        + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
-                        + " PhuongXa, QuanHuyen, TinhTp, SDTKhachHang, Email, MaSoThueKhachHang, DichVuID, NhanBaoCuoc,"
-                        + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
-                        + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh, xStatus)"
-                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-                db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, rs.getString(1),
-                        rs.getString("SoHopDong"), rs.getString("MaKhachHang"), rs.getString("MaDaiLy"), rs.getString("NgayDKHopDong"), rs.getString("DiaDiemDKHopDong"),
-                        rs.getString("TenKhachHang"), rs.getString("NguoiDaiDien"), rs.getString("ChucVu"), rs.getString("NgaySinh"), rs.getString("GioiTinh"), rs.getString("CMND"), rs.getString("NoiCapCMND"), rs.getString("NgayCapCMND"), rs.getString("SoHoKhau"),
-                        rs.getString("NoiCapSoHoKhau"), rs.getString("NgayCapSoHoKhau"), rs.getString("SoGiayChungNhanDKDN"), rs.getString("NoiCapDKDN"), rs.getString("NgayCapDKDN"), rs.getString("SoNha"), rs.getString("Duong"), rs.getString("xTo"),
-                        rs.getString("PhuongXa"), rs.getString("QuanHuyen"), rs.getString("TinhTp"), rs.getString("SDTKhachHang"), rs.getString("Email"), rs.getString("MaSoThueKhachHang"), rs.getString("DichVuID"), rs.getString("NhanBaoCuoc"),
-                        rs.getString("NhanBaoCuocKhac"), rs.getString("NhanBanKe"), rs.getString("NhanBanKeKhac"), rs.getString("EmailNhanBaoCuoc"), rs.getString("SDTNhanBaoCuoc"), rs.getString("ThanhToan"),
-                        rs.getString("ThanhToanKhac"), rs.getString("SoTaiKhoanThanhToan"), rs.getString("NganHang"), rs.getString("ChiNhanh"), "-1"
-                );
-
-                db.executeSQLwithParams("delete from Contracts where id = '" + idContract + "'", DataAccessObject.MODE_UPDATE.SMALL_UPDATE);
-                System.out.println("delete from Contracts where id = '" + idContract + "'");
+            } catch (SQLException ex) {
+                Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
                 Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        setFocusable(false);
+        setEnabled(false);
+        setVisible(false);        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,6 +309,21 @@ public class Search extends javax.swing.JFrame {
             }
         });
     }
+    
+    void CheckMaDaiLy(){
+        if(tblData.getSelectedRow() <0)
+            return;
+        
+        String maDL = (String) tblData.getValueAt(tblData.getSelectedRow(), 2);
+        
+        if(maDL.equalsIgnoreCase(Instance.MaDL)){
+            jButton1.setVisible(true);
+            jButton2.setVisible(true);
+        }else{
+            jButton1.setVisible(false);
+            jButton2.setVisible(false);
+        }
+    }
 
     void CreateFormClient() {
         FromClient f = new FromClient();
@@ -266,7 +343,9 @@ public class Search extends javax.swing.JFrame {
             }
         };
         try {
-            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '" + Instance.MaDL + "' and "
+//            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '" + Instance.MaDL + "' and "
+//                    + Instance.data[columnSearch] + " like '%" + searchKey + "%'");
+            ResultSet rs = db.getResulSet("select * from contracts where "
                     + Instance.data[columnSearch] + " like '%" + searchKey + "%'");
 
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -308,7 +387,8 @@ public class Search extends javax.swing.JFrame {
             }
         };
         try {
-            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '" + Instance.MaDL + "'");
+//            ResultSet rs = db.getResulSet("select * from contracts where MaDaiLy = '" + Instance.MaDL + "'");
+            ResultSet rs = db.getResulSet("select * from contracts");
 
             ResultSetMetaData rsmd = rs.getMetaData();
             int colNumber = rsmd.getColumnCount() - 1;
@@ -348,6 +428,7 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbbItem;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblData;
     private javax.swing.JTextField tfSearchText;

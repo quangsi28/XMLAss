@@ -5,7 +5,7 @@
  */
 package main;
 
-import main.Object.HopDong;
+import main.Object.*;
 import db.DataAccessObject;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,6 +18,7 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import sun.net.www.content.audio.x_aiff;
 
 /**
@@ -29,7 +30,7 @@ public class FromClient extends javax.swing.JFrame {
 
     public HopDong hopDong;
     public DataAccessObject db;
-
+    public DichVu dv;
     int nhanBaoCuoc, banKe, thanhToan;
 
     /**
@@ -37,12 +38,36 @@ public class FromClient extends javax.swing.JFrame {
      */
     public FromClient() {
         db = new DataAccessObject();
+        dv = new DichVu();
+
         initComponents();
         dcrNgayKyHopDong.setDateFormatString("dd/MM/yyyy");
         dcrANgaySinh.setDateFormatString("dd/MM/yyyy");
         dcrANoiCapCMND.setDateFormatString("dd/MM/yyyy");
         dcrASoHoKhau.setDateFormatString("dd/MM/yyyy");
         dcrAGiayChungNhanDKDN.setDateFormatString("dd/MM/yyyy");
+
+        DefaultTableModel model = new DefaultTableModel(new Object[][]{
+            {1, null, null, null, null, null, null, null},
+            {2, null, null, null, null, null, null, null},
+            {3, null, null, null, null, null, null, null},
+            {4, null, null, null, null, null, null, null},
+            {5, null, null, null, null, null, null, null}
+        },
+                new String[]{
+                    "STT", "Loại dịch vụ", "Địa chỉ lắp đặt", "Số điện thoại/Tên truy cập", "Gói cước/Tốc độ", "Phí hòa mạng/lắp đặt", "Ghi chú"
+                }) {
+
+            public boolean isCellEditable(int rowIndex, int mColIndex) {
+                if (mColIndex == 0) {
+                    return false;
+                }
+                return true;
+            }
+        };
+
+        tblDichVu.setModel(model);
+
         try {
             hopDong = new HopDong();
             System.out.println(Instance.idContract + " xStatus: " + Instance.xStatus);
@@ -631,7 +656,8 @@ public class FromClient extends javax.swing.JFrame {
                 {1, null, null, null, null, null, null, null},
                 {2, null, null, null, null, null, null, null},
                 {3, null, null, null, null, null, null, null},
-                {4, null, null, null, null, null, null, null}
+                {4, null, null, null, null, null, null, null},
+                {5, null, null, null, null, null, null, null}
             },
             new String [] {
                 "STT", "Loại dịch vụ","Địa chỉ lắp đặt","Số điện thoại/Tên truy cập","Gói cước/Tốc độ", "Phí hòa mạng/lắp đặt","Ghi chú"
@@ -1064,19 +1090,26 @@ public class FromClient extends javax.swing.JFrame {
 
     private void btnMainActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainActionActionPerformed
         String message = "Tạo hợp đồng mới?";
-        if(Instance.xStatus == 1)
+        if (Instance.xStatus == 1) {
             message = "Lưu lại sửa đổi?";
-        int clickSave = JOptionPane.showConfirmDialog(null, "Tạo hợp đồng mới?", null, JOptionPane.YES_NO_OPTION);
+        }
+        int clickSave = JOptionPane.showConfirmDialog(null, message, null, JOptionPane.YES_NO_OPTION);
         if (clickSave == JOptionPane.YES_OPTION) {
             try {
                 LuuHopDong();
-
+                LuuDichVu();
                 hopDong.xStatus = String.valueOf(Instance.xStatus);
                 System.out.println("Status " + Instance.xStatus);
                 String sql = "";
                 ResultSet rs;
                 if (hopDong.xStatus.compareTo("0") == 0) {
                     System.out.println("Add new contract");
+
+                    LuuDichVuSQL();
+                    rs = db.getResulSet("SELECT TOP 1 * FROM Services ORDER BY ID DESC");
+                    rs.next();
+                    hopDong.DichVuID = rs.getString(1);
+
                     sql = "Insert into Contracts ( SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
                             + " TenKhachHang, NguoiDaiDien, ChucVu, NgaySinh, GioiTinh, CMND, NoiCapCMND, NgayCapCMND, SoHoKhau,"
                             + " NoiCapSoHoKhau, NgayCapSoHoKhau, SoGiayChungNhanDKDN, NoiCapDKDN, NgayCapDKDN, SoNha, Duong, xTo,"
@@ -1084,20 +1117,33 @@ public class FromClient extends javax.swing.JFrame {
                             + " NhanBaoCuocKhac, NhanBanKe, NhanBanKeKhac, EmailNhanBaoCuoc, SDTNhanBaoCuoc, ThanhToan, "
                             + "ThanhToanKhac, SoTaiKhoanThanhToan, NganHang, ChiNhanh)"
                             + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, 
+                    db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
                             hopDong.SoHopDong, hopDong.MaKhachHang, hopDong.MaDaiLy, hopDong.NgayDKHopDong, hopDong.DiaDiemDKHopDong,
                             hopDong.TenKhachHang, hopDong.NguoiDaiDien, hopDong.ChucVu, hopDong.NgaySinh, hopDong.GioiTinh, hopDong.CMND, hopDong.NoiCapCMND, hopDong.NgayCapCMND, hopDong.SoHoKhau,
                             hopDong.NoiCapSoHoKhau, hopDong.NgayCapSoHoKhau, hopDong.SoGiayChungNhanDKDN, hopDong.NoiCapDKDN, hopDong.NgayCapDKDN, hopDong.SoNha, hopDong.Duong, hopDong.xTo,
                             hopDong.PhuongXa, hopDong.QuanHuyen, hopDong.TinhTp, hopDong.SDTKhachHang, hopDong.Email, hopDong.MaSoThueKhachHang, hopDong.DichVuID, hopDong.NhanBaoCuoc,
                             hopDong.NhanBaoCuocKhac, hopDong.NhanBanKe, hopDong.NhanBanKeKhac, hopDong.EmailNhanBaoCuoc, hopDong.SDTNhanBaoCuoc, hopDong.ThanhToan,
-                            hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh                 );
-                    
+                            hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh);
+
                     rs = db.getResulSet("SELECT TOP 1 * FROM Contracts ORDER BY ID DESC");
                     rs.next();
                     hopDong.id = rs.getString(1);
-                    
+
                 } else if (hopDong.xStatus.compareTo("1") == 0) {
                     System.out.println("Update contract");
+
+                    if (dv.id.compareTo("0") != 0) {
+                        CapNhatDichVu();
+                        System.out.println("Dich vu id: " + dv.id);
+                        hopDong.DichVuID = dv.id;
+                    } else {
+                        LuuDichVuSQL();
+                        rs = db.getResulSet("SELECT TOP 1 * FROM Services ORDER BY ID DESC");
+                        if (rs.next()) {
+                            hopDong.DichVuID = rs.getString(1);
+                        }
+                    }
+
                     sql = "UPDATE Contracts SET SoHopDong= ? , MaKhachHang= ? , MaDaiLy= ? , NgayDKHopDong= ? , DiaDiemDKHopDong= ? ,"
                             + " TenKhachHang= ? , NguoiDaiDien= ? , ChucVu= ? , NgaySinh= ? , GioiTinh= ? , CMND= ? , NoiCapCMND= ? , NgayCapCMND= ? , SoHoKhau= ? ,"
                             + " NoiCapSoHoKhau= ? , NgayCapSoHoKhau= ? , SoGiayChungNhanDKDN= ? , NoiCapDKDN= ? , NgayCapDKDN= ? , SoNha= ? , Duong= ? , xTo= ? ,"
@@ -1114,7 +1160,7 @@ public class FromClient extends javax.swing.JFrame {
                             hopDong.ThanhToanKhac, hopDong.SoTaiKhoanThanhToan, hopDong.NganHang, hopDong.ChiNhanh, String.valueOf(hopDong.id)
                     );
                 }
-                
+
                 rs = db.getResulSet("select * from ContractsLocal where id = '" + hopDong.id + "'");
                 if (!rs.next()) {
                     sql = "Insert into ContractsLocal (id, SoHopDong, MaKhachHang, MaDaiLy, NgayDKHopDong, DiaDiemDKHopDong,"
@@ -1151,8 +1197,6 @@ public class FromClient extends javax.swing.JFrame {
                     );
                 }
 
-                
-
             } catch (SQLException ex) {
                 Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
@@ -1164,6 +1208,143 @@ public class FromClient extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnMainActionActionPerformed
+
+    public void LuuDichVu() {
+        dv.LoaiDichVu1 = (String) tblDichVu.getValueAt(0, 1);
+        dv.LoaiDichVu2 = (String) tblDichVu.getValueAt(1, 1);
+        dv.LoaiDichVu3 = (String) tblDichVu.getValueAt(2, 1);
+        dv.LoaiDichVu4 = (String) tblDichVu.getValueAt(3, 1);
+        dv.LoaiDichVu5 = (String) tblDichVu.getValueAt(4, 1);
+
+        dv.DiaChiLapDat1 = (String) tblDichVu.getValueAt(0, 2);
+        dv.DiaChiLapDat2 = (String) tblDichVu.getValueAt(1, 2);
+        dv.DiaChiLapDat3 = (String) tblDichVu.getValueAt(2, 2);
+        dv.DiaChiLapDat4 = (String) tblDichVu.getValueAt(3, 2);
+        dv.DiaChiLapDat5 = (String) tblDichVu.getValueAt(4, 2);
+
+        dv.SDTLapDat1 = (String) tblDichVu.getValueAt(0, 3);
+        dv.SDTLapDat2 = (String) tblDichVu.getValueAt(1, 3);
+        dv.SDTLapDat3 = (String) tblDichVu.getValueAt(2, 3);
+        dv.SDTLapDat4 = (String) tblDichVu.getValueAt(3, 3);
+        dv.SDTLapDat5 = (String) tblDichVu.getValueAt(4, 3);
+
+        dv.GoiCuoc1 = (String) tblDichVu.getValueAt(0, 4);
+        dv.GoiCuoc2 = (String) tblDichVu.getValueAt(1, 4);
+        dv.GoiCuoc3 = (String) tblDichVu.getValueAt(2, 4);
+        dv.GoiCuoc4 = (String) tblDichVu.getValueAt(3, 4);
+        dv.GoiCuoc5 = (String) tblDichVu.getValueAt(4, 4);
+
+        dv.PhiHoaMang1 = (String) tblDichVu.getValueAt(0, 5);
+        dv.PhiHoaMang2 = (String) tblDichVu.getValueAt(1, 5);
+        dv.PhiHoaMang3 = (String) tblDichVu.getValueAt(2, 5);
+        dv.PhiHoaMang4 = (String) tblDichVu.getValueAt(3, 5);
+        dv.PhiHoaMang5 = (String) tblDichVu.getValueAt(4, 5);
+
+        dv.GhiChu1 = (String) tblDichVu.getValueAt(0, 6);
+        dv.GhiChu2 = (String) tblDichVu.getValueAt(1, 6);
+        dv.GhiChu3 = (String) tblDichVu.getValueAt(2, 6);
+        dv.GhiChu4 = (String) tblDichVu.getValueAt(3, 6);
+        dv.GhiChu5 = (String) tblDichVu.getValueAt(4, 6);
+    }
+
+    private void LuuDichVuSQL() throws SQLException {
+        try {
+            System.out.println("Luu moi dich vu");
+            String sql = "Insert into Services (LoaiDichVu1, DiaChiLapDat1, SDTLapDat1, GoiCuoc1, PhiHoaMang1, GhiChu1,"
+                    + " LoaiDichVu2, DiaChiLapDat2, SDTLapDat2, GoiCuoc2, PhiHoaMang2, GhiChu2,"
+                    + " LoaiDichVu3, DiaChiLapDat3, SDTLapDat3, GoiCuoc3, PhiHoaMang3, GhiChu3,"
+                    + " LoaiDichVu4, DiaChiLapDat4, SDTLapDat4, GoiCuoc4, PhiHoaMang4, GhiChu4,"
+                    + " LoaiDichVu5, DiaChiLapDat5, SDTLapDat5, GoiCuoc5, PhiHoaMang5, GhiChu5)"
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
+                    dv.LoaiDichVu1, dv.DiaChiLapDat1, dv.SDTLapDat1, dv.GoiCuoc1, dv.PhiHoaMang1, dv.GhiChu1,
+                    dv.LoaiDichVu2, dv.DiaChiLapDat2, dv.SDTLapDat2, dv.GoiCuoc2, dv.PhiHoaMang2, dv.GhiChu2,
+                    dv.LoaiDichVu3, dv.DiaChiLapDat3, dv.SDTLapDat3, dv.GoiCuoc3, dv.PhiHoaMang3, dv.GhiChu3,
+                    dv.LoaiDichVu4, dv.DiaChiLapDat4, dv.SDTLapDat4, dv.GoiCuoc4, dv.PhiHoaMang4, dv.GhiChu4,
+                    dv.LoaiDichVu5, dv.DiaChiLapDat5, dv.SDTLapDat5, dv.GoiCuoc5, dv.PhiHoaMang5, dv.GhiChu5
+            );
+
+            ResultSet rs = db.getResulSet("SELECT TOP 1 * FROM Services ORDER BY ID DESC");
+            if (!rs.next()) {
+                return;
+            }
+
+            String sql1 = "Insert into ServicesLocal (id,LoaiDichVu1, DiaChiLapDat1, SDTLapDat1, GoiCuoc1, PhiHoaMang1, GhiChu1,"
+                    + " LoaiDichVu2, DiaChiLapDat2, SDTLapDat2, GoiCuoc2, PhiHoaMang2, GhiChu2,"
+                    + " LoaiDichVu3, DiaChiLapDat3, SDTLapDat3, GoiCuoc3, PhiHoaMang3, GhiChu3,"
+                    + " LoaiDichVu4, DiaChiLapDat4, SDTLapDat4, GoiCuoc4, PhiHoaMang4, GhiChu4,"
+                    + " LoaiDichVu5, DiaChiLapDat5, SDTLapDat5, GoiCuoc5, PhiHoaMang5, GhiChu5, xStatus)"
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)";
+            db.executeSQLwithParams(sql1, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, rs.getString(1),
+                    dv.LoaiDichVu1, dv.DiaChiLapDat1, dv.SDTLapDat1, dv.GoiCuoc1, dv.PhiHoaMang1, dv.GhiChu1,
+                    dv.LoaiDichVu2, dv.DiaChiLapDat2, dv.SDTLapDat2, dv.GoiCuoc2, dv.PhiHoaMang2, dv.GhiChu2,
+                    dv.LoaiDichVu3, dv.DiaChiLapDat3, dv.SDTLapDat3, dv.GoiCuoc3, dv.PhiHoaMang3, dv.GhiChu3,
+                    dv.LoaiDichVu4, dv.DiaChiLapDat4, dv.SDTLapDat4, dv.GoiCuoc4, dv.PhiHoaMang4, dv.GhiChu4,
+                    dv.LoaiDichVu5, dv.DiaChiLapDat5, dv.SDTLapDat5, dv.GoiCuoc5, dv.PhiHoaMang5, dv.GhiChu5
+            );
+        } catch (Exception ex) {
+            Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void CapNhatDichVu() throws SQLException {
+        try {
+            System.out.println("Cap nhat dich vu");
+            String sql = "UPDATE Services SET LoaiDichVu1= ? , DiaChiLapDat1= ? , SDTLapDat1= ? , GoiCuoc1= ? , PhiHoaMang1= ? ,"
+                    + " GhiChu1= ? , LoaiDichVu2= ? , DiaChiLapDat2= ? , SDTLapDat2= ? , GoiCuoc2= ? , PhiHoaMang2= ? , GhiChu2= ? , LoaiDichVu3= ? , DiaChiLapDat3= ? ,"
+                    + " SDTLapDat3= ? , GoiCuoc3= ? , PhiHoaMang3= ? , GhiChu3= ? , LoaiDichVu4= ? , DiaChiLapDat4= ? , SDTLapDat4= ? , GoiCuoc4= ? ,"
+                    + " PhiHoaMang4= ? , GhiChu4= ? , LoaiDichVu5= ? , DiaChiLapDat5= ? , SDTLapDat5= ? , GoiCuoc5= ? , "
+                    + "PhiHoaMang5= ? , GhiChu5= ? "
+                    + "WHERE id = ?";
+            db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
+                    dv.LoaiDichVu1, dv.DiaChiLapDat1, dv.SDTLapDat1, dv.GoiCuoc1, dv.PhiHoaMang1, dv.GhiChu1,
+                    dv.LoaiDichVu2, dv.DiaChiLapDat2, dv.SDTLapDat2, dv.GoiCuoc2, dv.PhiHoaMang2, dv.GhiChu2,
+                    dv.LoaiDichVu3, dv.DiaChiLapDat3, dv.SDTLapDat3, dv.GoiCuoc3, dv.PhiHoaMang3, dv.GhiChu3,
+                    dv.LoaiDichVu4, dv.DiaChiLapDat4, dv.SDTLapDat4, dv.GoiCuoc4, dv.PhiHoaMang4, dv.GhiChu4,
+                    dv.LoaiDichVu5, dv.DiaChiLapDat5, dv.SDTLapDat5, dv.GoiCuoc5, dv.PhiHoaMang5, dv.GhiChu5,
+                    dv.id
+            );
+
+            ResultSet rs = db.getResulSet("Select * from ServicesLocal where id = " + dv.id);
+            if (rs.next()) {
+                System.out.println("Da co cap nhat");
+                sql = "UPDATE ServicesLocal SET LoaiDichVu1= ? , DiaChiLapDat1= ? , SDTLapDat1= ? , GoiCuoc1= ? , PhiHoaMang1= ? ,"
+                        + " GhiChu1= ? , LoaiDichVu2= ? , DiaChiLapDat2= ? , SDTLapDat2= ? , GoiCuoc2= ? , PhiHoaMang2= ? , GhiChu2= ? , LoaiDichVu3= ? , DiaChiLapDat3= ? ,"
+                        + " SDTLapDat3= ? , GoiCuoc3= ? , PhiHoaMang3= ? , GhiChu3= ? , LoaiDichVu4= ? , DiaChiLapDat4= ? , SDTLapDat4= ? , GoiCuoc4= ? ,"
+                        + " PhiHoaMang4= ? , GhiChu4= ? , LoaiDichVu5= ? , DiaChiLapDat5= ? , SDTLapDat5= ? , GoiCuoc5= ? , "
+                        + "PhiHoaMang5= ? , GhiChu5= ?, xStatus = 1 "
+                        + "WHERE id = ?";
+                db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE,
+                        dv.LoaiDichVu1, dv.DiaChiLapDat1, dv.SDTLapDat1, dv.GoiCuoc1, dv.PhiHoaMang1, dv.GhiChu1,
+                        dv.LoaiDichVu2, dv.DiaChiLapDat2, dv.SDTLapDat2, dv.GoiCuoc2, dv.PhiHoaMang2, dv.GhiChu2,
+                        dv.LoaiDichVu3, dv.DiaChiLapDat3, dv.SDTLapDat3, dv.GoiCuoc3, dv.PhiHoaMang3, dv.GhiChu3,
+                        dv.LoaiDichVu4, dv.DiaChiLapDat4, dv.SDTLapDat4, dv.GoiCuoc4, dv.PhiHoaMang4, dv.GhiChu4,
+                        dv.LoaiDichVu5, dv.DiaChiLapDat5, dv.SDTLapDat5, dv.GoiCuoc5, dv.PhiHoaMang5, dv.GhiChu5,
+                        dv.id
+                );
+            } else {
+                System.out.println("Tao ban cap nhat moi");
+
+                sql = "Insert into ServicesLocal (id, LoaiDichVu1, DiaChiLapDat1, SDTLapDat1, GoiCuoc1, PhiHoaMang1, GhiChu1,"
+                        + " LoaiDichVu2, DiaChiLapDat2, SDTLapDat2, GoiCuoc2, PhiHoaMang2, GhiChu2,"
+                        + " LoaiDichVu3, DiaChiLapDat3, SDTLapDat3, GoiCuoc3, PhiHoaMang3, GhiChu3,"
+                        + " LoaiDichVu4, DiaChiLapDat4, SDTLapDat4, GoiCuoc4, PhiHoaMang4, GhiChu4,"
+                        + " LoaiDichVu5, DiaChiLapDat5, SDTLapDat5, GoiCuoc5, PhiHoaMang5, GhiChu5, xStatus)"
+                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)";
+                db.executeSQLwithParams(sql, DataAccessObject.MODE_UPDATE.SMALL_UPDATE, dv.id,
+                        dv.LoaiDichVu1, dv.DiaChiLapDat1, dv.SDTLapDat1, dv.GoiCuoc1, dv.PhiHoaMang1, dv.GhiChu1,
+                        dv.LoaiDichVu2, dv.DiaChiLapDat2, dv.SDTLapDat2, dv.GoiCuoc2, dv.PhiHoaMang2, dv.GhiChu2,
+                        dv.LoaiDichVu3, dv.DiaChiLapDat3, dv.SDTLapDat3, dv.GoiCuoc3, dv.PhiHoaMang3, dv.GhiChu3,
+                        dv.LoaiDichVu4, dv.DiaChiLapDat4, dv.SDTLapDat4, dv.GoiCuoc4, dv.PhiHoaMang4, dv.GhiChu4,
+                        dv.LoaiDichVu5, dv.DiaChiLapDat5, dv.SDTLapDat5, dv.GoiCuoc5, dv.PhiHoaMang5, dv.GhiChu5
+                );
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
     private void tfAEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAEmailActionPerformed
         // TODO add your handling code here:
@@ -1451,24 +1632,46 @@ public class FromClient extends javax.swing.JFrame {
             tfNganHang.setText(rs.getString(40));
             tfChiNhanh.setText(rs.getString(41));
 
-            int service = rs.getInt("DichVuID");
+            String service = rs.getString(30);
 
-            rs = db.getResulSet("select * from Services where id = " + service);
+            rs = db.getResulSet("select * from Services where id = '" + service + "'");
 
             while (rs.next()) {
-                String loadDichVu, diaChiLapDat, sdtLapDat, GoiCuoc, phiHoaMang, ghiChu;
-                loadDichVu = rs.getString(2);
-                diaChiLapDat = rs.getString(3);
-                sdtLapDat = rs.getString(4);
-                GoiCuoc = rs.getString(5);
-                phiHoaMang = rs.getString(6);
-                ghiChu = rs.getString(7);
-                tblDichVu.setValueAt(loadDichVu, 0, 1);
-                tblDichVu.setValueAt(diaChiLapDat, 0, 2);
-                tblDichVu.setValueAt(sdtLapDat, 0, 3);
-                tblDichVu.setValueAt(GoiCuoc, 0, 4);
-                tblDichVu.setValueAt(phiHoaMang, 0, 5);
-                tblDichVu.setValueAt(ghiChu, 0, 6);
+                dv.id = service;
+                tblDichVu.setValueAt(rs.getString(2), 0, 1);
+                tblDichVu.setValueAt(rs.getString(3), 0, 2);
+                tblDichVu.setValueAt(rs.getString(4), 0, 3);
+                tblDichVu.setValueAt(rs.getString(5), 0, 4);
+                tblDichVu.setValueAt(rs.getString(6), 0, 5);
+                tblDichVu.setValueAt(rs.getString(7), 0, 6);
+
+                tblDichVu.setValueAt(rs.getString(8), 1, 1);
+                tblDichVu.setValueAt(rs.getString(9), 1, 2);
+                tblDichVu.setValueAt(rs.getString(10), 1, 3);
+                tblDichVu.setValueAt(rs.getString(11), 1, 4);
+                tblDichVu.setValueAt(rs.getString(12), 1, 5);
+                tblDichVu.setValueAt(rs.getString(13), 1, 6);
+
+                tblDichVu.setValueAt(rs.getString(14), 2, 1);
+                tblDichVu.setValueAt(rs.getString(15), 2, 2);
+                tblDichVu.setValueAt(rs.getString(16), 2, 3);
+                tblDichVu.setValueAt(rs.getString(17), 2, 4);
+                tblDichVu.setValueAt(rs.getString(18), 2, 5);
+                tblDichVu.setValueAt(rs.getString(19), 2, 6);
+
+                tblDichVu.setValueAt(rs.getString(20), 3, 1);
+                tblDichVu.setValueAt(rs.getString(21), 3, 2);
+                tblDichVu.setValueAt(rs.getString(22), 3, 3);
+                tblDichVu.setValueAt(rs.getString(23), 3, 4);
+                tblDichVu.setValueAt(rs.getString(24), 3, 5);
+                tblDichVu.setValueAt(rs.getString(25), 3, 6);
+
+                tblDichVu.setValueAt(rs.getString(26), 4, 1);
+                tblDichVu.setValueAt(rs.getString(27), 4, 2);
+                tblDichVu.setValueAt(rs.getString(28), 4, 3);
+                tblDichVu.setValueAt(rs.getString(29), 4, 4);
+                tblDichVu.setValueAt(rs.getString(30), 4, 5);
+                tblDichVu.setValueAt(rs.getString(31), 4, 6);
             }
         } catch (Exception ex) {
             Logger.getLogger(FromClient.class.getName()).log(Level.SEVERE, null, ex);

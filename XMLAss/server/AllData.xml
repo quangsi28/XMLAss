@@ -1,259 +1,1419 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <root>
-    <Contract>
-        <SoHopDong>1</SoHopDong>
-        <MaKhachHang>1</MaKhachHang>
-        <MaDaiLy>DL001</MaDaiLy>
-        <NgayDKHopDong>Fri Jan 08 00:28:00 PST 2016</NgayDKHopDong>
-        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
-        <TenKhachHang>123123u Mathews</TenKhachHang>
-        <NguoiDaiDien>Burke Cherry</NguoiDaiDien>
-        <ChucVu>Sinh Vien</ChucVu>
-        <NgaySinh>Wed Jan 08 00:29:00 PST 1992</NgaySinh>
-        <GioiTinh>Nam</GioiTinh>
-        <CMND>1640090914999</CMND>
-        <NoiCapCMND>Ninh Binh</NoiCapCMND>
-        <NgayCapCMND>Mon Jan 09 00:24:00 PST 2012</NgayCapCMND>
-        <SoHoKhau>23868</SoHoKhau>
-        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
-        <NgayCapSoHoKhau>Wed Jan 02 00:02:00 PST 2013</NgayCapSoHoKhau>
-        <SoGiayChungNhanDKDN>54753</SoGiayChungNhanDKDN>
-        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
-        <NgayCapDKDN>Sat Jan 02 00:04:00 PST 2010</NgayCapDKDN>
-        <SoNha>98</SoNha>
-        <Duong/>
-        <xTo/>
-        <PhuongXa/>
-        <QuanHuyen/>
-        <TinhTp>Ha Noi</TinhTp>
-        <SDTKhachHang>004-629-6540</SDTKhachHang>
-        <Email>velit@ametconsectetuer.net</Email>
-        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
-        <DichVuID/>
-        <NhanBaoCuoc>4</NhanBaoCuoc>
-        <NhanBaoCuocKhac/>
-        <NhanBanKe>1</NhanBanKe>
-        <NhanBanKeKhac/>
-        <EmailNhanBaoCuoc>nisl.elementum@Donec.net</EmailNhanBaoCuoc>
-        <SDTNhanBaoCuoc>026-203-8060</SDTNhanBaoCuoc>
-        <ThanhToan>2</ThanhToan>
-        <ThanhToanKhac/>
-        <SoTaiKhoanThanhToan>4532374082871466</SoTaiKhoanThanhToan>
-        <NganHang>SCB</NganHang>
-        <ChiNhanh>Turrialba</ChiNhanh>
-    </Contract>
-    <Contract>
-        <SoHopDong>1</SoHopDong>
-        <MaKhachHang>1</MaKhachHang>
+    <Contract id="2">
+        <SoHopDong>2</SoHopDong>
+        <MaKhachHang>2</MaKhachHang>
         <MaDaiLy>DL002</MaDaiLy>
-        <NgayDKHopDong>Fri Jan 08 00:28:00 PST 2016</NgayDKHopDong>
+        <NgayDKHopDong>12/01/2016</NgayDKHopDong>
         <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
-        <TenKhachHang>u Mathewss</TenKhachHang>
-        <NguoiDaiDien>Burke Cherry</NguoiDaiDien>
+        <TenKhachHang>Long</TenKhachHang>
+        <NguoiDaiDien>Timon Michael</NguoiDaiDien>
         <ChucVu>Sinh Vien</ChucVu>
-        <NgaySinh>Wed Jan 08 00:29:00 PST 1992</NgaySinh>
-        <GioiTinh>Nam</GioiTinh>
-        <CMND>1640090914999</CMND>
+        <NgaySinh>10/01/1993</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1699070611699</CMND>
         <NoiCapCMND>Ninh Binh</NoiCapCMND>
-        <NgayCapCMND>Mon Jan 09 00:24:00 PST 2012</NgayCapCMND>
-        <SoHoKhau>23868</SoHoKhau>
-        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
-        <NgayCapSoHoKhau>Wed Jan 02 00:02:00 PST 2013</NgayCapSoHoKhau>
-        <SoGiayChungNhanDKDN>54753</SoGiayChungNhanDKDN>
-        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
-        <NgayCapDKDN>Sat Jan 02 00:04:00 PST 2010</NgayCapDKDN>
-        <SoNha>98</SoNha>
+        <NgayCapCMND>10/01/2007</NgayCapCMND>
+        <SoHoKhau>82915</SoHoKhau>
+        <NoiCapSoHoKhau>Thanh Hoa</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>10/01/2006</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>41513</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Nghe An</NoiCapDKDN>
+        <NgayCapDKDN>10/01/2013</NgayCapDKDN>
+        <SoNha>94</SoNha>
         <Duong/>
         <xTo/>
         <PhuongXa/>
         <QuanHuyen/>
-        <TinhTp>Ha Noi</TinhTp>
-        <SDTKhachHang>004-629-6540</SDTKhachHang>
-        <Email>velit@ametconsectetuer.net</Email>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>065-621-2359</SDTKhachHang>
+        <Email>ultricies.dignissim.lacus@Aenean.net</Email>
         <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
-        <DichVuID/>
-        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <DichVuID>1</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
         <NhanBaoCuocKhac/>
         <NhanBanKe>1</NhanBanKe>
         <NhanBanKeKhac/>
-        <EmailNhanBaoCuoc>nisl.elementum@Donec.net</EmailNhanBaoCuoc>
-        <SDTNhanBaoCuoc>026-203-8060</SDTNhanBaoCuoc>
-        <ThanhToan>2</ThanhToan>
+        <EmailNhanBaoCuoc>arcu.Vivamus@elitelitfermentum.edu</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>023-313-1627</SDTNhanBaoCuoc>
+        <ThanhToan>4</ThanhToan>
         <ThanhToanKhac/>
-        <SoTaiKhoanThanhToan>4532374082871466</SoTaiKhoanThanhToan>
-        <NganHang>SCB</NganHang>
-        <ChiNhanh>Turrialba</ChiNhanh>
+        <SoTaiKhoanThanhToan>4716498643367</SoTaiKhoanThanhToan>
+        <NganHang>ACB</NganHang>
+        <ChiNhanh>Russell</ChiNhanh>
     </Contract>
-    <Contract>
-        <SoHopDong>1</SoHopDong>
-        <MaKhachHang>1</MaKhachHang>
-        <MaDaiLy>DL002</MaDaiLy>
-        <NgayDKHopDong>Fri Jan 08 00:28:00 PST 2016</NgayDKHopDong>
-        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
-        <TenKhachHang>Beau Mathews</TenKhachHang>
-        <NguoiDaiDien>Burke Cherry</NguoiDaiDien>
-        <ChucVu>Sinh Vien</ChucVu>
-        <NgaySinh>Wed Jan 08 00:29:00 PST 1992</NgaySinh>
+    <Contract id="3">
+        <SoHopDong>3</SoHopDong>
+        <MaKhachHang>3</MaKhachHang>
+        <MaDaiLy>DL005</MaDaiLy>
+        <NgayDKHopDong>04/05/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Odysseus Cote</TenKhachHang>
+        <NguoiDaiDien>Arden Munoz</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>22/04/1991</NgaySinh>
         <GioiTinh>Nam</GioiTinh>
-        <CMND>1640090914999</CMND>
+        <CMND>1668121334099</CMND>
         <NoiCapCMND>Ninh Binh</NoiCapCMND>
-        <NgayCapCMND>Mon Jan 09 00:24:00 PST 2012</NgayCapCMND>
-        <SoHoKhau>23868</SoHoKhau>
-        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
-        <NgayCapSoHoKhau>Wed Jan 02 00:02:00 PST 2013</NgayCapSoHoKhau>
-        <SoGiayChungNhanDKDN>54753</SoGiayChungNhanDKDN>
-        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
-        <NgayCapDKDN>Sat Jan 02 00:04:00 PST 2010</NgayCapDKDN>
-        <SoNha>98</SoNha>
+        <NgayCapCMND>13/04/2010</NgayCapCMND>
+        <SoHoKhau>39011</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Tinh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>18/01/2009</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>95479</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>11/09/2012</NgayCapDKDN>
+        <SoNha>10</SoNha>
         <Duong/>
         <xTo/>
         <PhuongXa/>
         <QuanHuyen/>
-        <TinhTp>Ha Noi</TinhTp>
-        <SDTKhachHang>004-629-6540</SDTKhachHang>
-        <Email>velit@ametconsectetuer.net</Email>
+        <TinhTp>Ninh Binh</TinhTp>
+        <SDTKhachHang>032-233-6993</SDTKhachHang>
+        <Email>id.erat.Etiam@arcu.ca</Email>
         <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
-        <DichVuID/>
-        <NhanBaoCuoc>4</NhanBaoCuoc>
-        <NhanBaoCuocKhac/>
-        <NhanBanKe>1</NhanBanKe>
-        <NhanBanKeKhac/>
-        <EmailNhanBaoCuoc>nisl.elementum@Donec.net</EmailNhanBaoCuoc>
-        <SDTNhanBaoCuoc>026-203-8060</SDTNhanBaoCuoc>
-        <ThanhToan>2</ThanhToan>
-        <ThanhToanKhac/>
-        <SoTaiKhoanThanhToan>4532374082871466</SoTaiKhoanThanhToan>
-        <NganHang>SCB</NganHang>
-        <ChiNhanh>Turrialba</ChiNhanh>
-        <xStatus>1</xStatus>
+        <DichVuID>3</DichVuID>
+        <NhanBaoCuoc>1</NhanBaoCuoc>
+        <NhanBaoCuocKhac>lectus quis massa. Mauris vestibulum, neque sed dictum eleifend,</NhanBaoCuocKhac>
+        <NhanBanKe>2</NhanBanKe>
+        <NhanBanKeKhac>Cras dictum ultricies ligula. Nullam enim. Sed</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>In.faucibus@euismodacfermentum.edu</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>025-574-7926</SDTNhanBaoCuoc>
+        <ThanhToan>4</ThanhToan>
+        <ThanhToanKhac>Aliquam vulputate ullamcorper magna. Sed</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4929008193704841</SoTaiKhoanThanhToan>
+        <NganHang>ACB</NganHang>
+        <ChiNhanh>Sambalpur</ChiNhanh>
     </Contract>
-    <Contract>
-        <SoHopDong>1</SoHopDong>
-        <MaKhachHang>1</MaKhachHang>
-        <MaDaiLy>DL002</MaDaiLy>
-        <NgayDKHopDong>Fri Jan 08 00:28:00 PST 2016</NgayDKHopDong>
-        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
-        <TenKhachHang>Beau asdasdasd</TenKhachHang>
-        <NguoiDaiDien>Burkeasdasd</NguoiDaiDien>
-        <ChucVu>Sinh Vien</ChucVu>
-        <NgaySinh>Wed Jan 08 00:29:00 PST 1992</NgaySinh>
+    <Contract id="4">
+        <SoHopDong>4</SoHopDong>
+        <MaKhachHang>4</MaKhachHang>
+        <MaDaiLy>DL004</MaDaiLy>
+        <NgayDKHopDong>29/11/2016</NgayDKHopDong>
+        <DiaDiemDKHopDong>Ha Noi</DiaDiemDKHopDong>
+        <TenKhachHang>Xanthus White</TenKhachHang>
+        <NguoiDaiDien>Mufutau Hobbs</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>17/04/1992</NgaySinh>
         <GioiTinh>Nam</GioiTinh>
-        <CMND>1640090914999</CMND>
+        <CMND>1635092140599</CMND>
         <NoiCapCMND>Ninh Binh</NoiCapCMND>
-        <NgayCapCMND>Mon Jan 09 00:24:00 PST 2012</NgayCapCMND>
-        <SoHoKhau>23868</SoHoKhau>
+        <NgayCapCMND>07/04/2008</NgayCapCMND>
+        <SoHoKhau>57139</SoHoKhau>
         <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
-        <NgayCapSoHoKhau>Wed Jan 02 00:02:00 PST 2013</NgayCapSoHoKhau>
-        <SoGiayChungNhanDKDN>54753</SoGiayChungNhanDKDN>
-        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
-        <NgayCapDKDN>Sat Jan 02 00:04:00 PST 2010</NgayCapDKDN>
-        <SoNha>98</SoNha>
+        <NgayCapSoHoKhau>29/08/2014</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>72172</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Noi</NoiCapDKDN>
+        <NgayCapDKDN>02/09/2014</NgayCapDKDN>
+        <SoNha>13</SoNha>
         <Duong/>
         <xTo/>
         <PhuongXa/>
         <QuanHuyen/>
-        <TinhTp>Ha Noi</TinhTp>
-        <SDTKhachHang>004-629-6540</SDTKhachHang>
-        <Email>velit@ametconsectetuer.net</Email>
+        <TinhTp>Nghe An</TinhTp>
+        <SDTKhachHang>005-332-1154</SDTKhachHang>
+        <Email>sit@sem.ca</Email>
         <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
-        <DichVuID/>
-        <NhanBaoCuoc>4</NhanBaoCuoc>
-        <NhanBaoCuocKhac/>
-        <NhanBanKe>1</NhanBanKe>
-        <NhanBanKeKhac/>
-        <EmailNhanBaoCuoc>nisl.elementum@Donec.net</EmailNhanBaoCuoc>
-        <SDTNhanBaoCuoc>026-203-8060</SDTNhanBaoCuoc>
-        <ThanhToan>2</ThanhToan>
-        <ThanhToanKhac/>
-        <SoTaiKhoanThanhToan>4532374082871466</SoTaiKhoanThanhToan>
-        <NganHang>SCB</NganHang>
-        <ChiNhanh>Turrialba</ChiNhanh>
-        <xStatus>1</xStatus>
+        <DichVuID>4</DichVuID>
+        <NhanBaoCuoc>1</NhanBaoCuoc>
+        <NhanBaoCuocKhac>tristique senectus et netus et</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>vestibulum lorem, sit amet ultricies sem magna</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>et.netus.et@convallisest.co.uk</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>013-971-0933</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4929765270590910</SoTaiKhoanThanhToan>
+        <NganHang>AGB</NganHang>
+        <ChiNhanh>Ahmadnagar</ChiNhanh>
     </Contract>
-    <Contract>
-        <SoHopDong>1</SoHopDong>
-        <MaKhachHang>1</MaKhachHang>
+    <Contract id="5">
+        <SoHopDong>11</SoHopDong>
+        <MaKhachHang>11</MaKhachHang>
         <MaDaiLy>DL001</MaDaiLy>
-        <NgayDKHopDong>Fri Jan 08 00:28:00 PST 2016</NgayDKHopDong>
+        <NgayDKHopDong>01/01/2017</NgayDKHopDong>
         <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
-        <TenKhachHang>Beau Mathews</TenKhachHang>
-        <NguoiDaiDien>Burke Cherry</NguoiDaiDien>
-        <ChucVu>Sinh Vien</ChucVu>
-        <NgaySinh>Wed Jan 08 00:29:00 PST 1992</NgaySinh>
-        <GioiTinh>Nam</GioiTinh>
-        <CMND>1640090914999</CMND>
-        <NoiCapCMND>Ninh Binh</NoiCapCMND>
-        <NgayCapCMND>Mon Jan 09 00:24:00 PST 2012</NgayCapCMND>
-        <SoHoKhau>23868</SoHoKhau>
-        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
-        <NgayCapSoHoKhau>Wed Jan 02 00:02:00 PST 2013</NgayCapSoHoKhau>
-        <SoGiayChungNhanDKDN>54753</SoGiayChungNhanDKDN>
-        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
-        <NgayCapDKDN>Sat Jan 02 00:04:00 PST 2010</NgayCapDKDN>
-        <SoNha>98</SoNha>
-        <Duong/>
-        <xTo/>
-        <PhuongXa/>
-        <QuanHuyen/>
-        <TinhTp>Ha Noi</TinhTp>
-        <SDTKhachHang>004-629-6540</SDTKhachHang>
-        <Email>velit@ametconsectetuer.net</Email>
+        <TenKhachHang>1</TenKhachHang>
+        <NguoiDaiDien>1</NguoiDaiDien>
+        <ChucVu>1</ChucVu>
+        <NgaySinh>01/01/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1661050942899</CMND>
+        <NoiCapCMND>1</NoiCapCMND>
+        <NgayCapCMND>01/01/2008</NgayCapCMND>
+        <SoHoKhau>33311</SoHoKhau>
+        <NoiCapSoHoKhau>1</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>01/01/2007</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>1</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>1</NoiCapDKDN>
+        <NgayCapDKDN>01/01/2005</NgayCapDKDN>
+        <SoNha>95</SoNha>
+        <Duong>1</Duong>
+        <xTo>1</xTo>
+        <PhuongXa>1</PhuongXa>
+        <QuanHuyen>1</QuanHuyen>
+        <TinhTp>Ha Tinh</TinhTp>
+        <SDTKhachHang>033-597-7279</SDTKhachHang>
+        <Email>natoque.penatibus@Sed.edu</Email>
         <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
-        <DichVuID/>
-        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <DichVuID>14</DichVuID>
+        <NhanBaoCuoc>1</NhanBaoCuoc>
         <NhanBaoCuocKhac/>
         <NhanBanKe>1</NhanBanKe>
         <NhanBanKeKhac/>
-        <EmailNhanBaoCuoc>nisl.elementum@Donec.net</EmailNhanBaoCuoc>
-        <SDTNhanBaoCuoc>026-203-8060</SDTNhanBaoCuoc>
-        <ThanhToan>2</ThanhToan>
+        <EmailNhanBaoCuoc>a.felis@inconsequat.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>054-598-9775</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
         <ThanhToanKhac/>
-        <SoTaiKhoanThanhToan>4532374082871466</SoTaiKhoanThanhToan>
-        <NganHang>SCB</NganHang>
-        <ChiNhanh>Turrialba</ChiNhanh>
-        <xStatus>1</xStatus>
+        <SoTaiKhoanThanhToan>4929356708131558</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>LaSalle</ChiNhanh>
     </Contract>
-    <Contract>
-        <SoHopDong>1</SoHopDong>
-        <MaKhachHang>1</MaKhachHang>
+    <Contract id="7">
+        <SoHopDong>11</SoHopDong>
+        <MaKhachHang>11</MaKhachHang>
         <MaDaiLy>DL001</MaDaiLy>
-        <NgayDKHopDong>Fri Jan 08 00:28:00 PST 2016</NgayDKHopDong>
+        <NgayDKHopDong>01/01/2017</NgayDKHopDong>
         <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
-        <TenKhachHang>Beau Mathews</TenKhachHang>
-        <NguoiDaiDien>Burke Cherry</NguoiDaiDien>
+        <TenKhachHang>1</TenKhachHang>
+        <NguoiDaiDien>1</NguoiDaiDien>
+        <ChucVu>1</ChucVu>
+        <NgaySinh>01/01/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1661050942899</CMND>
+        <NoiCapCMND>1</NoiCapCMND>
+        <NgayCapCMND>01/01/2008</NgayCapCMND>
+        <SoHoKhau>33311</SoHoKhau>
+        <NoiCapSoHoKhau>1</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>01/01/2007</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>1</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>1</NoiCapDKDN>
+        <NgayCapDKDN>01/01/2005</NgayCapDKDN>
+        <SoNha>95</SoNha>
+        <Duong>1</Duong>
+        <xTo>1</xTo>
+        <PhuongXa>1</PhuongXa>
+        <QuanHuyen>1</QuanHuyen>
+        <TinhTp>Ha Tinh</TinhTp>
+        <SDTKhachHang>033-597-7279</SDTKhachHang>
+        <Email>natoque.penatibus@Sed.edu</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>7</DichVuID>
+        <NhanBaoCuoc>1</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>1</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>a.felis@inconsequat.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>054-598-9775</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4929356708131558</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>LaSalle</ChiNhanh>
+    </Contract>
+    <Contract id="8">
+        <SoHopDong>8</SoHopDong>
+        <MaKhachHang>8</MaKhachHang>
+        <MaDaiLy>DL004</MaDaiLy>
+        <NgayDKHopDong>06/03/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Jack Best</TenKhachHang>
+        <NguoiDaiDien>Rafael Thomas</NguoiDaiDien>
         <ChucVu>Sinh Vien</ChucVu>
-        <NgaySinh>Wed Jan 08 00:29:00 PST 1992</NgaySinh>
+        <NgaySinh>14/09/1992</NgaySinh>
         <GioiTinh>Nam</GioiTinh>
-        <CMND>1640090914999</CMND>
-        <NoiCapCMND>Ninh Binh</NoiCapCMND>
-        <NgayCapCMND>Mon Jan 09 00:24:00 PST 2012</NgayCapCMND>
-        <SoHoKhau>23868</SoHoKhau>
-        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
-        <NgayCapSoHoKhau>Wed Jan 02 00:02:00 PST 2013</NgayCapSoHoKhau>
-        <SoGiayChungNhanDKDN>54753</SoGiayChungNhanDKDN>
-        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
-        <NgayCapDKDN>Sat Jan 02 00:04:00 PST 2010</NgayCapDKDN>
-        <SoNha>98</SoNha>
+        <CMND>1612042327199</CMND>
+        <NoiCapCMND>Nghe An</NoiCapCMND>
+        <NgayCapCMND>30/07/2012</NgayCapCMND>
+        <SoHoKhau>35712</SoHoKhau>
+        <NoiCapSoHoKhau>TP Ho Chi Minh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>04/05/2011</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>46303</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Nghe An</NoiCapDKDN>
+        <NgayCapDKDN>30/09/2003</NgayCapDKDN>
+        <SoNha>89</SoNha>
         <Duong/>
         <xTo/>
         <PhuongXa/>
         <QuanHuyen/>
         <TinhTp>Ha Noi</TinhTp>
-        <SDTKhachHang>004-629-6540</SDTKhachHang>
-        <Email>velit@ametconsectetuer.net</Email>
+        <SDTKhachHang>099-127-8955</SDTKhachHang>
+        <Email>pellentesque.tellus.sem@hymenaeosMauris.org</Email>
         <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
-        <DichVuID/>
-        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <DichVuID>8</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>magnis dis parturient</NhanBaoCuocKhac>
+        <NhanBanKe>5</NhanBanKe>
+        <NhanBanKeKhac>interdum libero dui nec</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>tellus.Nunc.lectus@Vestibulumaccumsanneque.edu</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>014-459-0537</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4355992237713</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Rouen</ChiNhanh>
+    </Contract>
+    <Contract id="9">
+        <SoHopDong>11</SoHopDong>
+        <MaKhachHang>11</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>03/01/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>John Robbins</TenKhachHang>
+        <NguoiDaiDien>Damon Nicholson</NguoiDaiDien>
+        <ChucVu>Sinh Vien</ChucVu>
+        <NgaySinh>05/01/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1661050942899</CMND>
+        <NoiCapCMND>TP Ho Chi Minh</NoiCapCMND>
+        <NgayCapCMND>12/01/2008</NgayCapCMND>
+        <SoHoKhau>33311</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Noi</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>12/01/2007</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>81160</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Noi</NoiCapDKDN>
+        <NgayCapDKDN>03/01/2005</NgayCapDKDN>
+        <SoNha>95</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Tinh</TinhTp>
+        <SDTKhachHang>033-597-7279</SDTKhachHang>
+        <Email>natoque.penatibus@Sed.edu</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>6</DichVuID>
+        <NhanBaoCuoc>1</NhanBaoCuoc>
         <NhanBaoCuocKhac/>
         <NhanBanKe>1</NhanBanKe>
         <NhanBanKeKhac/>
-        <EmailNhanBaoCuoc>nisl.elementum@Donec.net</EmailNhanBaoCuoc>
-        <SDTNhanBaoCuoc>026-203-8060</SDTNhanBaoCuoc>
-        <ThanhToan>2</ThanhToan>
+        <EmailNhanBaoCuoc>a.felis@inconsequat.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>054-598-9775</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
         <ThanhToanKhac/>
-        <SoTaiKhoanThanhToan>4532374082871466</SoTaiKhoanThanhToan>
-        <NganHang>SCB</NganHang>
-        <ChiNhanh>Turrialba</ChiNhanh>
-        <xStatus>-1</xStatus>
+        <SoTaiKhoanThanhToan>4929356708131558</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>LaSalle</ChiNhanh>
     </Contract>
+    <Contract id="10">
+        <SoHopDong>12</SoHopDong>
+        <MaKhachHang>12</MaKhachHang>
+        <MaDaiLy>DL003</MaDaiLy>
+        <NgayDKHopDong>01/01/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Si</TenKhachHang>
+        <NguoiDaiDien>Si</NguoiDaiDien>
+        <ChucVu>Nhan Vien</ChucVu>
+        <NgaySinh>12/01/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1602120376399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>10/01/2005</NgayCapCMND>
+        <SoHoKhau>44138</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>09/01/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>76821</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
+        <NgayCapDKDN>10/01/2007</NgayCapDKDN>
+        <SoNha>54</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Nghe An</TinhTp>
+        <SDTKhachHang>098-822-6973</SDTKhachHang>
+        <Email>magnis.dis.parturient@tincidunt.co.uk</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>16</DichVuID>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>vel.est.tempor@vestibulumneceuismod.com</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>080-817-8232</SDTNhanBaoCuoc>
+        <ThanhToan>3</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4716457194486782</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Manfredonia</ChiNhanh>
+    </Contract>
+    <Contract id="11">
+        <SoHopDong>11</SoHopDong>
+        <MaKhachHang>11</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>09/03/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>John Robbins</TenKhachHang>
+        <NguoiDaiDien>Damon Nicholson</NguoiDaiDien>
+        <ChucVu>Sinh Vien</ChucVu>
+        <NgaySinh>01/05/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1661050942899</CMND>
+        <NoiCapCMND>TP Ho Chi Minh</NoiCapCMND>
+        <NgayCapCMND>18/12/2008</NgayCapCMND>
+        <SoHoKhau>33311</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Noi</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>03/12/2007</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>81160</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Noi</NoiCapDKDN>
+        <NgayCapDKDN>07/03/2005</NgayCapDKDN>
+        <SoNha>95</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Tinh</TinhTp>
+        <SDTKhachHang>033-597-7279</SDTKhachHang>
+        <Email>natoque.penatibus@Sed.edu</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>11</DichVuID>
+        <NhanBaoCuoc>1</NhanBaoCuoc>
+        <NhanBaoCuocKhac>sociis natoque penatibus</NhanBaoCuocKhac>
+        <NhanBanKe>1</NhanBanKe>
+        <NhanBanKeKhac>euismod enim. Etiam gravida molestie arcu. Sed eu</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>a.felis@inconsequat.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>054-598-9775</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit,</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4929356708131558</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>LaSalle</ChiNhanh>
+    </Contract>
+    <Contract id="12">
+        <SoHopDong>12</SoHopDong>
+        <MaKhachHang>12</MaKhachHang>
+        <MaDaiLy>DL003</MaDaiLy>
+        <NgayDKHopDong>09/01/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Nissim Briggs</TenKhachHang>
+        <NguoiDaiDien>Kaseem Foster</NguoiDaiDien>
+        <ChucVu>Nhan Vien</ChucVu>
+        <NgaySinh>30/12/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1602120376399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>23/10/2005</NgayCapCMND>
+        <SoHoKhau>44138</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>30/09/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>76821</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
+        <NgayCapDKDN>02/10/2007</NgayCapDKDN>
+        <SoNha>54</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Nghe An</TinhTp>
+        <SDTKhachHang>098-822-6973</SDTKhachHang>
+        <Email>magnis.dis.parturient@tincidunt.co.uk</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>12</DichVuID>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac>Maecenas libero est, congue a, aliquet vel,</NhanBaoCuocKhac>
+        <NhanBanKe>4</NhanBanKe>
+        <NhanBanKeKhac>vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>vel.est.tempor@vestibulumneceuismod.com</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>080-817-8232</SDTNhanBaoCuoc>
+        <ThanhToan>3</ThanhToan>
+        <ThanhToanKhac>Fusce mi lorem,</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4716457194486782</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Manfredonia</ChiNhanh>
+    </Contract>
+    <Contract id="13">
+        <SoHopDong>13</SoHopDong>
+        <MaKhachHang>13</MaKhachHang>
+        <MaDaiLy>DL005</MaDaiLy>
+        <NgayDKHopDong>07/05/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>TP Ho Chi Minh</DiaDiemDKHopDong>
+        <TenKhachHang>Adam Vaughan</TenKhachHang>
+        <NguoiDaiDien>Alec Trevino</NguoiDaiDien>
+        <ChucVu>Nhan Vien</ChucVu>
+        <NgaySinh>25/07/1991</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1633052309199</CMND>
+        <NoiCapCMND>Ha Noi</NoiCapCMND>
+        <NgayCapCMND>01/10/2006</NgayCapCMND>
+        <SoHoKhau>51472</SoHoKhau>
+        <NoiCapSoHoKhau>Thanh Hoa</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>13/05/2015</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>35470</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Thanh Hoa</NoiCapDKDN>
+        <NgayCapDKDN>12/11/2003</NgayCapDKDN>
+        <SoNha>1</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>050-164-9763</SDTKhachHang>
+        <Email>ridiculus@etrutrum.ca</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>13</DichVuID>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac>vulputate</NhanBaoCuocKhac>
+        <NhanBanKe>1</NhanBanKe>
+        <NhanBanKeKhac>vulputate,</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>sociis@Namnullamagna.edu</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>081-121-5483</SDTNhanBaoCuoc>
+        <ThanhToan>2</ThanhToan>
+        <ThanhToanKhac>mauris sagittis placerat. Cras dictum ultricies</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4532176717941980</SoTaiKhoanThanhToan>
+        <NganHang>ACB</NganHang>
+        <ChiNhanh>Pickering</ChiNhanh>
+    </Contract>
+    <Contract id="14">
+        <SoHopDong>14</SoHopDong>
+        <MaKhachHang>14</MaKhachHang>
+        <MaDaiLy>DL005</MaDaiLy>
+        <NgayDKHopDong>29/05/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Ha Noi</DiaDiemDKHopDong>
+        <TenKhachHang>Raphael Griffin</TenKhachHang>
+        <NguoiDaiDien>August Blake</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>25/05/1988</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1674112209199</CMND>
+        <NoiCapCMND>Nghe An</NoiCapCMND>
+        <NgayCapCMND>19/09/2005</NgayCapCMND>
+        <SoHoKhau>93144</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Noi</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>03/02/2013</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>39121</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Noi</NoiCapDKDN>
+        <NgayCapDKDN>10/02/2010</NgayCapDKDN>
+        <SoNha>63</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Nghe An</TinhTp>
+        <SDTKhachHang>036-485-5440</SDTKhachHang>
+        <Email>aliquam.enim.nec@liberoMorbi.ca</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>14</DichVuID>
+        <NhanBaoCuoc>3</NhanBaoCuoc>
+        <NhanBaoCuocKhac>sit amet, consectetuer adipiscing elit. Etiam laoreet,</NhanBaoCuocKhac>
+        <NhanBanKe>1</NhanBanKe>
+        <NhanBanKeKhac>nisi</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>eget.nisi@Curabiturutodio.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>028-971-2479</SDTNhanBaoCuoc>
+        <ThanhToan>3</ThanhToan>
+        <ThanhToanKhac>Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4716690889206</SoTaiKhoanThanhToan>
+        <NganHang>ACB</NganHang>
+        <ChiNhanh>Ham-sur-Heure-Nalinnes</ChiNhanh>
+    </Contract>
+    <Contract id="15">
+        <SoHopDong>15</SoHopDong>
+        <MaKhachHang>15</MaKhachHang>
+        <MaDaiLy>DL002</MaDaiLy>
+        <NgayDKHopDong>14/05/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Thanh Hoa</DiaDiemDKHopDong>
+        <TenKhachHang>Mason Miranda</TenKhachHang>
+        <NguoiDaiDien>Lamar Duke</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>21/09/1995</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1641082634399</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>11/09/2007</NgayCapCMND>
+        <SoHoKhau>77875</SoHoKhau>
+        <NoiCapSoHoKhau>Nghe An</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>05/06/2013</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>85765</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
+        <NgayCapDKDN>29/05/2016</NgayCapDKDN>
+        <SoNha>71</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>004-445-0123</SDTKhachHang>
+        <Email>enim.Suspendisse.aliquet@massaMauris.edu</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>15</DichVuID>
+        <NhanBaoCuoc>5</NhanBaoCuoc>
+        <NhanBaoCuocKhac>ante. Vivamus non lorem vitae odio sagittis semper. Nam</NhanBaoCuocKhac>
+        <NhanBanKe>5</NhanBanKe>
+        <NhanBanKeKhac>nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>Proin.ultrices@Nulla.com</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>032-003-8791</SDTNhanBaoCuoc>
+        <ThanhToan>5</ThanhToan>
+        <ThanhToanKhac>quam. Pellentesque habitant morbi tristique senectus et netus</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4929956805005835</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Boussu-lez-Walcourt</ChiNhanh>
+    </Contract>
+    <Contract id="16">
+        <SoHopDong>16</SoHopDong>
+        <MaKhachHang>16</MaKhachHang>
+        <MaDaiLy>DL003</MaDaiLy>
+        <NgayDKHopDong>26/12/2016</NgayDKHopDong>
+        <DiaDiemDKHopDong>Nghe An</DiaDiemDKHopDong>
+        <TenKhachHang>Palmer Bender</TenKhachHang>
+        <NguoiDaiDien>Hall Reed</NguoiDaiDien>
+        <ChucVu>Sinh Vien</ChucVu>
+        <NgaySinh>22/01/1996</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1636060250299</CMND>
+        <NoiCapCMND>Ha Tinh</NoiCapCMND>
+        <NgayCapCMND>20/10/2005</NgayCapCMND>
+        <SoHoKhau>30850</SoHoKhau>
+        <NoiCapSoHoKhau>Thanh Hoa</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>14/04/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>37595</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>TP Ho Chi Minh</NoiCapDKDN>
+        <NgayCapDKDN>02/11/2005</NgayCapDKDN>
+        <SoNha>38</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ha Noi</TinhTp>
+        <SDTKhachHang>026-998-0509</SDTKhachHang>
+        <Email>tellus.justo@euismod.net</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>16</DichVuID>
+        <NhanBaoCuoc>4</NhanBaoCuoc>
+        <NhanBaoCuocKhac>netus et</NhanBaoCuocKhac>
+        <NhanBanKe>2</NhanBanKe>
+        <NhanBanKeKhac>vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>tristique.senectus.et@sem.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>016-675-9699</SDTNhanBaoCuoc>
+        <ThanhToan>2</ThanhToan>
+        <ThanhToanKhac>enim, sit amet ornare lectus justo</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4024007137763487</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Banff</ChiNhanh>
+    </Contract>
+    <Contract id="17">
+        <SoHopDong>17</SoHopDong>
+        <MaKhachHang>17</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>25/05/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Nghe An</DiaDiemDKHopDong>
+        <TenKhachHang>Maxwell Stein</TenKhachHang>
+        <NguoiDaiDien>Camden William</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>16/06/1991</NgaySinh>
+        <GioiTinh>Nu</GioiTinh>
+        <CMND>1647080367699</CMND>
+        <NoiCapCMND>Thanh Hoa</NoiCapCMND>
+        <NgayCapCMND>31/12/2011</NgayCapCMND>
+        <SoHoKhau>61903</SoHoKhau>
+        <NoiCapSoHoKhau>Ha Tinh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>05/02/2007</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>90049</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Thanh Hoa</NoiCapDKDN>
+        <NgayCapDKDN>29/08/2000</NgayCapDKDN>
+        <SoNha>93</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ninh Binh</TinhTp>
+        <SDTKhachHang>096-914-3290</SDTKhachHang>
+        <Email>ipsum@metusAeneansed.org</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>17</DichVuID>
+        <NhanBaoCuoc>2</NhanBaoCuoc>
+        <NhanBaoCuocKhac>viverra. Donec tempus, lorem</NhanBaoCuocKhac>
+        <NhanBanKe>3</NhanBanKe>
+        <NhanBanKeKhac>aliquet libero. Integer in</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>erat.nonummy@Phasellus.org</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>092-826-8392</SDTNhanBaoCuoc>
+        <ThanhToan>6</ThanhToan>
+        <ThanhToanKhac>risus. In</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4485696596552670</SoTaiKhoanThanhToan>
+        <NganHang>TPB</NganHang>
+        <ChiNhanh>Thorembais-les-BŽguines</ChiNhanh>
+    </Contract>
+    <Contract id="18">
+        <SoHopDong>20</SoHopDong>
+        <MaKhachHang>20</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>06/01/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Ha Tinh</DiaDiemDKHopDong>
+        <TenKhachHang>George Puckett</TenKhachHang>
+        <NguoiDaiDien>Alfonso Sutton</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>07/01/1993</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1611011778899</CMND>
+        <NoiCapCMND>Nghe An</NoiCapCMND>
+        <NgayCapCMND>04/01/2010</NgayCapCMND>
+        <SoHoKhau>38231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>12/01/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>75897</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ninh Binh</NoiCapDKDN>
+        <NgayCapDKDN>08/01/2012</NgayCapDKDN>
+        <SoNha>42</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ninh Binh</TinhTp>
+        <SDTKhachHang>033-447-5284</SDTKhachHang>
+        <Email>elementum.lorem@leoelementumsem.co.uk</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>6</DichVuID>
+        <NhanBaoCuoc>5</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>1</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc>aliquet@Nuncpulvinar.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>057-614-6574</SDTNhanBaoCuoc>
+        <ThanhToan>3</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan>4916623670265</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Beveren</ChiNhanh>
+    </Contract>
+    <Contract id="19">
+        <SoHopDong>19</SoHopDong>
+        <MaKhachHang>19</MaKhachHang>
+        <MaDaiLy>DL003</MaDaiLy>
+        <NgayDKHopDong>15/11/2016</NgayDKHopDong>
+        <DiaDiemDKHopDong>Ha Noi</DiaDiemDKHopDong>
+        <TenKhachHang>John Spears</TenKhachHang>
+        <NguoiDaiDien>Luke Branch</NguoiDaiDien>
+        <ChucVu>Cong Nhan</ChucVu>
+        <NgaySinh>09/07/1995</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1627082237899</CMND>
+        <NoiCapCMND>Ha Noi</NoiCapCMND>
+        <NgayCapCMND>06/07/2012</NgayCapCMND>
+        <SoHoKhau>89596</SoHoKhau>
+        <NoiCapSoHoKhau>TP Ho Chi Minh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>20/05/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>25676</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ha Tinh</NoiCapDKDN>
+        <NgayCapDKDN>19/01/2008</NgayCapDKDN>
+        <SoNha>22</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Thanh Hoa</TinhTp>
+        <SDTKhachHang>041-938-8356</SDTKhachHang>
+        <Email>vel@metusIn.edu</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>19</DichVuID>
+        <NhanBaoCuoc>2</NhanBaoCuoc>
+        <NhanBaoCuocKhac>et malesuada fames ac</NhanBaoCuocKhac>
+        <NhanBanKe>5</NhanBanKe>
+        <NhanBanKeKhac>inceptos hymenaeos. Mauris ut quam</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>a@eros.ca</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>013-802-1660</SDTNhanBaoCuoc>
+        <ThanhToan>2</ThanhToan>
+        <ThanhToanKhac>natoque penatibus et magnis</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4125028743467</SoTaiKhoanThanhToan>
+        <NganHang>VCB</NganHang>
+        <ChiNhanh>Bungay</ChiNhanh>
+    </Contract>
+    <Contract id="20">
+        <SoHopDong>20</SoHopDong>
+        <MaKhachHang>20</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>23/06/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Ha Tinh</DiaDiemDKHopDong>
+        <TenKhachHang>George Puckett</TenKhachHang>
+        <NguoiDaiDien>Alfonso Sutton</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>24/07/1993</NgaySinh>
+        <GioiTinh>Nam</GioiTinh>
+        <CMND>1611011778899</CMND>
+        <NoiCapCMND>Nghe An</NoiCapCMND>
+        <NgayCapCMND>21/04/2010</NgayCapCMND>
+        <SoHoKhau>38231</SoHoKhau>
+        <NoiCapSoHoKhau>Ninh Binh</NoiCapSoHoKhau>
+        <NgayCapSoHoKhau>19/12/2012</NgayCapSoHoKhau>
+        <SoGiayChungNhanDKDN>75897</SoGiayChungNhanDKDN>
+        <NoiCapDKDN>Ninh Binh</NoiCapDKDN>
+        <NgayCapDKDN>08/08/2012</NgayCapDKDN>
+        <SoNha>42</SoNha>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp>Ninh Binh</TinhTp>
+        <SDTKhachHang>033-447-5284</SDTKhachHang>
+        <Email>elementum.lorem@leoelementumsem.co.uk</Email>
+        <MaSoThueKhachHang>8388607</MaSoThueKhachHang>
+        <DichVuID>20</DichVuID>
+        <NhanBaoCuoc>5</NhanBaoCuoc>
+        <NhanBaoCuocKhac>dolor egestas rhoncus. Proin nisl sem,</NhanBaoCuocKhac>
+        <NhanBanKe>1</NhanBanKe>
+        <NhanBanKeKhac>velit dui, semper</NhanBanKeKhac>
+        <EmailNhanBaoCuoc>aliquet@Nuncpulvinar.net</EmailNhanBaoCuoc>
+        <SDTNhanBaoCuoc>057-614-6574</SDTNhanBaoCuoc>
+        <ThanhToan>3</ThanhToan>
+        <ThanhToanKhac>Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie</ThanhToanKhac>
+        <SoTaiKhoanThanhToan>4916623670265</SoTaiKhoanThanhToan>
+        <NganHang>SCB</NganHang>
+        <ChiNhanh>Beveren</ChiNhanh>
+    </Contract>
+    <Contract id="129">
+        <SoHopDong>2222</SoHopDong>
+        <MaKhachHang>2222</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>10/07/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>Ho La</DiaDiemDKHopDong>
+        <TenKhachHang>Hoang Duc Long</TenKhachHang>
+        <NguoiDaiDien>khong</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh/>
+        <GioiTinh/>
+        <CMND/>
+        <NoiCapCMND/>
+        <NgayCapCMND/>
+        <SoHoKhau/>
+        <NoiCapSoHoKhau/>
+        <NgayCapSoHoKhau/>
+        <SoGiayChungNhanDKDN/>
+        <NoiCapDKDN/>
+        <NgayCapDKDN/>
+        <SoNha/>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp/>
+        <SDTKhachHang/>
+        <Email/>
+        <MaSoThueKhachHang/>
+        <DichVuID>15</DichVuID>
+        <NhanBaoCuoc>0</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>0</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc/>
+        <SDTNhanBaoCuoc/>
+        <ThanhToan>0</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan/>
+        <NganHang/>
+        <ChiNhanh/>
+    </Contract>
+    <Contract id="130">
+        <SoHopDong>1001</SoHopDong>
+        <MaKhachHang>1001</MaKhachHang>
+        <MaDaiLy>DL001</MaDaiLy>
+        <NgayDKHopDong>04/07/2017</NgayDKHopDong>
+        <DiaDiemDKHopDong>ho La</DiaDiemDKHopDong>
+        <TenKhachHang>Anh Tuan</TenKhachHang>
+        <NguoiDaiDien>khong</NguoiDaiDien>
+        <ChucVu/>
+        <NgaySinh>19/07/2017</NgaySinh>
+        <GioiTinh/>
+        <CMND/>
+        <NoiCapCMND/>
+        <NgayCapCMND/>
+        <SoHoKhau/>
+        <NoiCapSoHoKhau/>
+        <NgayCapSoHoKhau/>
+        <SoGiayChungNhanDKDN/>
+        <NoiCapDKDN/>
+        <NgayCapDKDN/>
+        <SoNha/>
+        <Duong/>
+        <xTo/>
+        <PhuongXa/>
+        <QuanHuyen/>
+        <TinhTp/>
+        <SDTKhachHang/>
+        <Email/>
+        <MaSoThueKhachHang/>
+        <DichVuID>19</DichVuID>
+        <NhanBaoCuoc>0</NhanBaoCuoc>
+        <NhanBaoCuocKhac/>
+        <NhanBanKe>0</NhanBanKe>
+        <NhanBanKeKhac/>
+        <EmailNhanBaoCuoc/>
+        <SDTNhanBaoCuoc/>
+        <ThanhToan>0</ThanhToan>
+        <ThanhToanKhac/>
+        <SoTaiKhoanThanhToan/>
+        <NganHang/>
+        <ChiNhanh/>
+    </Contract>
+    <Service id="1">
+        <LoaiDichVu1>1</LoaiDichVu1>
+        <DiaChiLapDat1>1</DiaChiLapDat1>
+        <SDTLapDat1>1</SDTLapDat1>
+        <GoiCuoc1>1</GoiCuoc1>
+        <PhiHoaMang1/>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2/>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3/>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4/>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5/>
+        <GhiChu5/>
+    </Service>
+    <Service id="2">
+        <LoaiDichVu1>2</LoaiDichVu1>
+        <DiaChiLapDat1>2</DiaChiLapDat1>
+        <SDTLapDat1>2</SDTLapDat1>
+        <GoiCuoc1>2</GoiCuoc1>
+        <PhiHoaMang1/>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2/>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3/>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4/>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5/>
+        <GhiChu5/>
+    </Service>
+    <Service id="4">
+        <LoaiDichVu1>testsss</LoaiDichVu1>
+        <DiaChiLapDat1>test</DiaChiLapDat1>
+        <SDTLapDat1>test</SDTLapDat1>
+        <GoiCuoc1>test</GoiCuoc1>
+        <PhiHoaMang1>1</PhiHoaMang1>
+        <GhiChu1>test</GhiChu1>
+        <LoaiDichVu2>test</LoaiDichVu2>
+        <DiaChiLapDat2>test</DiaChiLapDat2>
+        <SDTLapDat2>test</SDTLapDat2>
+        <GoiCuoc2>test</GoiCuoc2>
+        <PhiHoaMang2>1</PhiHoaMang2>
+        <GhiChu2>test</GhiChu2>
+        <LoaiDichVu3>test</LoaiDichVu3>
+        <DiaChiLapDat3>test</DiaChiLapDat3>
+        <SDTLapDat3>test</SDTLapDat3>
+        <GoiCuoc3>test</GoiCuoc3>
+        <PhiHoaMang3>1</PhiHoaMang3>
+        <GhiChu3>test</GhiChu3>
+        <LoaiDichVu4>test</LoaiDichVu4>
+        <DiaChiLapDat4>test</DiaChiLapDat4>
+        <SDTLapDat4>test</SDTLapDat4>
+        <GoiCuoc4>test</GoiCuoc4>
+        <PhiHoaMang4>1</PhiHoaMang4>
+        <GhiChu4>test</GhiChu4>
+        <LoaiDichVu5>test</LoaiDichVu5>
+        <DiaChiLapDat5>test</DiaChiLapDat5>
+        <SDTLapDat5>test</SDTLapDat5>
+        <GoiCuoc5>test</GoiCuoc5>
+        <PhiHoaMang5>1</PhiHoaMang5>
+        <GhiChu5>test</GhiChu5>
+    </Service>
+    <Service id="5">
+        <LoaiDichVu1>23213</LoaiDichVu1>
+        <DiaChiLapDat1>213213</DiaChiLapDat1>
+        <SDTLapDat1>ewqewqe</SDTLapDat1>
+        <GoiCuoc1>dsadsad</GoiCuoc1>
+        <PhiHoaMang1>1</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>23213</LoaiDichVu2>
+        <DiaChiLapDat2>213213</DiaChiLapDat2>
+        <SDTLapDat2>ewqewqe</SDTLapDat2>
+        <GoiCuoc2>dsadsad</GoiCuoc2>
+        <PhiHoaMang2>1</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>23213</LoaiDichVu3>
+        <DiaChiLapDat3>213213</DiaChiLapDat3>
+        <SDTLapDat3>ewqewqe</SDTLapDat3>
+        <GoiCuoc3>dsadsad</GoiCuoc3>
+        <PhiHoaMang3>1</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>23213</LoaiDichVu4>
+        <DiaChiLapDat4>213213</DiaChiLapDat4>
+        <SDTLapDat4>ewqewqe</SDTLapDat4>
+        <GoiCuoc4>dsadsad</GoiCuoc4>
+        <PhiHoaMang4>1</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>23213</LoaiDichVu5>
+        <DiaChiLapDat5>213213</DiaChiLapDat5>
+        <SDTLapDat5>ewqewqe</SDTLapDat5>
+        <GoiCuoc5>dsadsad</GoiCuoc5>
+        <PhiHoaMang5>1</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="6">
+        <LoaiDichVu1>a</LoaiDichVu1>
+        <DiaChiLapDat1>b</DiaChiLapDat1>
+        <SDTLapDat1/>
+        <GoiCuoc1>10</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>a</LoaiDichVu2>
+        <DiaChiLapDat2>b</DiaChiLapDat2>
+        <SDTLapDat2/>
+        <GoiCuoc2>10</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>a</LoaiDichVu3>
+        <DiaChiLapDat3>b</DiaChiLapDat3>
+        <SDTLapDat3/>
+        <GoiCuoc3>10</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>a</LoaiDichVu4>
+        <DiaChiLapDat4>b</DiaChiLapDat4>
+        <SDTLapDat4/>
+        <GoiCuoc4>10</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>a</LoaiDichVu5>
+        <DiaChiLapDat5>b</DiaChiLapDat5>
+        <SDTLapDat5/>
+        <GoiCuoc5>10</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="7">
+        <LoaiDichVu1>2</LoaiDichVu1>
+        <DiaChiLapDat1>1</DiaChiLapDat1>
+        <SDTLapDat1>4</SDTLapDat1>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>23</LoaiDichVu3>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="8">
+        <LoaiDichVu1>1</LoaiDichVu1>
+        <DiaChiLapDat1>1</DiaChiLapDat1>
+        <SDTLapDat1>1</SDTLapDat1>
+        <GoiCuoc1>1</GoiCuoc1>
+        <PhiHoaMang1>1</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>1</LoaiDichVu2>
+        <DiaChiLapDat2>1</DiaChiLapDat2>
+        <SDTLapDat2>1</SDTLapDat2>
+        <GoiCuoc2>1</GoiCuoc2>
+        <PhiHoaMang2>1</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>1</LoaiDichVu3>
+        <DiaChiLapDat3>1</DiaChiLapDat3>
+        <SDTLapDat3>1</SDTLapDat3>
+        <GoiCuoc3>1</GoiCuoc3>
+        <PhiHoaMang3>1</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>1</LoaiDichVu4>
+        <DiaChiLapDat4>1</DiaChiLapDat4>
+        <SDTLapDat4>1</SDTLapDat4>
+        <GoiCuoc4>1</GoiCuoc4>
+        <PhiHoaMang4>1</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>1</LoaiDichVu5>
+        <DiaChiLapDat5>1</DiaChiLapDat5>
+        <SDTLapDat5>1</SDTLapDat5>
+        <GoiCuoc5>1</GoiCuoc5>
+        <PhiHoaMang5>1</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="9">
+        <LoaiDichVu1/>
+        <DiaChiLapDat1/>
+        <SDTLapDat1/>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="10">
+        <LoaiDichVu1/>
+        <DiaChiLapDat1/>
+        <SDTLapDat1/>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="11">
+        <LoaiDichVu1/>
+        <DiaChiLapDat1/>
+        <SDTLapDat1/>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="12">
+        <LoaiDichVu1>2</LoaiDichVu1>
+        <DiaChiLapDat1>2</DiaChiLapDat1>
+        <SDTLapDat1>2</SDTLapDat1>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>2</LoaiDichVu2>
+        <DiaChiLapDat2>2</DiaChiLapDat2>
+        <SDTLapDat2>2</SDTLapDat2>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>2</LoaiDichVu3>
+        <DiaChiLapDat3>2</DiaChiLapDat3>
+        <SDTLapDat3>2</SDTLapDat3>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>2</LoaiDichVu4>
+        <DiaChiLapDat4>2</DiaChiLapDat4>
+        <SDTLapDat4>2</SDTLapDat4>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>2</LoaiDichVu5>
+        <DiaChiLapDat5>2</DiaChiLapDat5>
+        <SDTLapDat5>2</SDTLapDat5>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="13">
+        <LoaiDichVu1>a</LoaiDichVu1>
+        <DiaChiLapDat1>a</DiaChiLapDat1>
+        <SDTLapDat1>a</SDTLapDat1>
+        <GoiCuoc1>a</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>a</LoaiDichVu2>
+        <DiaChiLapDat2>a</DiaChiLapDat2>
+        <SDTLapDat2>a</SDTLapDat2>
+        <GoiCuoc2>a</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>a</LoaiDichVu3>
+        <DiaChiLapDat3>a</DiaChiLapDat3>
+        <SDTLapDat3>a</SDTLapDat3>
+        <GoiCuoc3>a</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>a</LoaiDichVu4>
+        <DiaChiLapDat4>a</DiaChiLapDat4>
+        <SDTLapDat4>a</SDTLapDat4>
+        <GoiCuoc4>a</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>a</LoaiDichVu5>
+        <DiaChiLapDat5>a</DiaChiLapDat5>
+        <SDTLapDat5>a</SDTLapDat5>
+        <GoiCuoc5>a</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="14">
+        <LoaiDichVu1>a</LoaiDichVu1>
+        <DiaChiLapDat1>a</DiaChiLapDat1>
+        <SDTLapDat1>a</SDTLapDat1>
+        <GoiCuoc1>a</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1>a</GhiChu1>
+        <LoaiDichVu2>a</LoaiDichVu2>
+        <DiaChiLapDat2>a</DiaChiLapDat2>
+        <SDTLapDat2>a</SDTLapDat2>
+        <GoiCuoc2>a</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2>a</GhiChu2>
+        <LoaiDichVu3>a</LoaiDichVu3>
+        <DiaChiLapDat3>a</DiaChiLapDat3>
+        <SDTLapDat3>a</SDTLapDat3>
+        <GoiCuoc3>a</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3>a</GhiChu3>
+        <LoaiDichVu4>a</LoaiDichVu4>
+        <DiaChiLapDat4>a</DiaChiLapDat4>
+        <SDTLapDat4>a</SDTLapDat4>
+        <GoiCuoc4>a</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4>a</GhiChu4>
+        <LoaiDichVu5>a</LoaiDichVu5>
+        <DiaChiLapDat5>a</DiaChiLapDat5>
+        <SDTLapDat5>a</SDTLapDat5>
+        <GoiCuoc5>a</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5>a</GhiChu5>
+    </Service>
+    <Service id="15">
+        <LoaiDichVu1/>
+        <DiaChiLapDat1/>
+        <SDTLapDat1/>
+        <GoiCuoc1/>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2/>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2/>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3/>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3/>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4/>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4/>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5/>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5/>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="16">
+        <LoaiDichVu1>Quay tay</LoaiDichVu1>
+        <DiaChiLapDat1/>
+        <SDTLapDat1/>
+        <GoiCuoc1>20000</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>Quay tay</LoaiDichVu2>
+        <DiaChiLapDat2/>
+        <SDTLapDat2/>
+        <GoiCuoc2>20000</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>Quay tay</LoaiDichVu3>
+        <DiaChiLapDat3/>
+        <SDTLapDat3/>
+        <GoiCuoc3>20000</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>Quay tay</LoaiDichVu4>
+        <DiaChiLapDat4/>
+        <SDTLapDat4/>
+        <GoiCuoc4>20000</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>Quay tay</LoaiDichVu5>
+        <DiaChiLapDat5/>
+        <SDTLapDat5/>
+        <GoiCuoc5>20000</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="17">
+        <LoaiDichVu1>A</LoaiDichVu1>
+        <DiaChiLapDat1>B</DiaChiLapDat1>
+        <SDTLapDat1>0231654978</SDTLapDat1>
+        <GoiCuoc1>10000</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>A</LoaiDichVu2>
+        <DiaChiLapDat2>B</DiaChiLapDat2>
+        <SDTLapDat2>0231654978</SDTLapDat2>
+        <GoiCuoc2>10000</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>A</LoaiDichVu3>
+        <DiaChiLapDat3>B</DiaChiLapDat3>
+        <SDTLapDat3>0231654978</SDTLapDat3>
+        <GoiCuoc3>10000</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>A</LoaiDichVu4>
+        <DiaChiLapDat4>B</DiaChiLapDat4>
+        <SDTLapDat4>0231654978</SDTLapDat4>
+        <GoiCuoc4>10000</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>A</LoaiDichVu5>
+        <DiaChiLapDat5>B</DiaChiLapDat5>
+        <SDTLapDat5>0231654978</SDTLapDat5>
+        <GoiCuoc5>10000</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="18">
+        <LoaiDichVu1>si</LoaiDichVu1>
+        <DiaChiLapDat1>si</DiaChiLapDat1>
+        <SDTLapDat1>123</SDTLapDat1>
+        <GoiCuoc1>20000</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>si</LoaiDichVu2>
+        <DiaChiLapDat2>si</DiaChiLapDat2>
+        <SDTLapDat2>123</SDTLapDat2>
+        <GoiCuoc2>20000</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>si</LoaiDichVu3>
+        <DiaChiLapDat3>si</DiaChiLapDat3>
+        <SDTLapDat3>123</SDTLapDat3>
+        <GoiCuoc3>20000</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>si</LoaiDichVu4>
+        <DiaChiLapDat4>si</DiaChiLapDat4>
+        <SDTLapDat4>123</SDTLapDat4>
+        <GoiCuoc4>20000</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>si</LoaiDichVu5>
+        <DiaChiLapDat5>si</DiaChiLapDat5>
+        <SDTLapDat5>123</SDTLapDat5>
+        <GoiCuoc5>20000</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
+    <Service id="19">
+        <LoaiDichVu1>Dien thoai</LoaiDichVu1>
+        <DiaChiLapDat1>k</DiaChiLapDat1>
+        <SDTLapDat1>0987164738</SDTLapDat1>
+        <GoiCuoc1>20000</GoiCuoc1>
+        <PhiHoaMang1>0</PhiHoaMang1>
+        <GhiChu1/>
+        <LoaiDichVu2>Dien thoai</LoaiDichVu2>
+        <DiaChiLapDat2>k</DiaChiLapDat2>
+        <SDTLapDat2>0987164738</SDTLapDat2>
+        <GoiCuoc2>20000</GoiCuoc2>
+        <PhiHoaMang2>0</PhiHoaMang2>
+        <GhiChu2/>
+        <LoaiDichVu3>Dien thoai</LoaiDichVu3>
+        <DiaChiLapDat3>k</DiaChiLapDat3>
+        <SDTLapDat3>0987164738</SDTLapDat3>
+        <GoiCuoc3>20000</GoiCuoc3>
+        <PhiHoaMang3>0</PhiHoaMang3>
+        <GhiChu3/>
+        <LoaiDichVu4>Dien thoai</LoaiDichVu4>
+        <DiaChiLapDat4>k</DiaChiLapDat4>
+        <SDTLapDat4>0987164738</SDTLapDat4>
+        <GoiCuoc4>20000</GoiCuoc4>
+        <PhiHoaMang4>0</PhiHoaMang4>
+        <GhiChu4/>
+        <LoaiDichVu5>Dien thoai</LoaiDichVu5>
+        <DiaChiLapDat5>k</DiaChiLapDat5>
+        <SDTLapDat5>0987164738</SDTLapDat5>
+        <GoiCuoc5>20000</GoiCuoc5>
+        <PhiHoaMang5>0</PhiHoaMang5>
+        <GhiChu5/>
+    </Service>
 </root>

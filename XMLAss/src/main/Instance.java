@@ -34,7 +34,7 @@ public class Instance {
     
     private static Instance i;
     public static String idContract = "-1";
-    public static String MaDL= "DL002";
+    public static String MaDL= "DL001";
     public static int agentID = 0;
     public static int xStatus = -2;
     
